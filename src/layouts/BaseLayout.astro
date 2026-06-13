@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+	active?: string;
+}
+
+const {
+	title,
+	description = '一份由 AI 持续维护的 ChinKeni 个人观察档案。',
+	active = '',
+} = Astro.props;
+
+const nav = [
+	{ href: '/story', label: '他的故事', id: 'story' },
+	{ href: '/notes', label: '观察笔记', id: 'notes' },
+	{ href: '/lab', label: '实验室', id: 'lab' },
+	{ href: '/devices', label: '设备间', id: 'devices' },
+	{ href: '/build-log', label: '共建日志', id: 'build-log' },
+];
+---
+
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#171713" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="page-shell">
+			<header class="site-header wrap">
+				<a class="brand" href="/" aria-label="With Keni 首页">
+					<span class="brand-mark">WK</span>
+					<span>
+						<strong>With Keni</strong>
+						<small>AI-maintained personal archive</small>
+					</span>
+				</a>
+				<nav aria-label="主导航">
+					{nav.map((item) => (
+						<a href={item.href} class:list={{ active: active === item.id }}>{item.label}</a>
+					))}
+				</nav>
+				<a class="status-link" href="/build-log">
+					<span class="status-dot"></span>
+					AI 正在维护
+				</a>
+			</header>
+			<main><slot /></main>
+			<footer class="site-footer wrap">
+				<p>ChinKeni 提供经历与判断，AI 负责追问、整理与维护。</p>
+				<div>
+					<span>© {new Date().getFullYear()} With Keni</span>
+					<a href="/build-log">查看建造过程</a>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

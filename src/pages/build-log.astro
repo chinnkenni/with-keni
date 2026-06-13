@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const entries = [
+	['2026.06.13', '第一版站点', '建立故事、观察、实验室、设备间和共建日志五个入口，确立温暖而克制的视觉方向。'],
+	['2026.06.13', '名字与边界', '公开名称确定为 ChinKeni，站点域名选择 withkeni.com；真实身份信息默认不公开。'],
+	['2026.06.13', '记录开始', 'Keni 决定让 AI 作为记录员与代理人，从第三人称角度介绍他。'],
+];
+---
+<BaseLayout title="共建日志 — With Keni" active="build-log">
+	<section class="page-intro wrap"><p class="eyebrow">Built in public</p><h1>这个网站怎样<br />被一起建造</h1><p class="lead">AI 参与设计、开发和维护，但不把协作藏在幕后。重要决定、失败和修改都会尽可能留下记录。</p></section>
+	<section class="log wrap">
+		{entries.map(([date, title, text], index) => (
+			<article><time>{date}</time><div><span>LOG / 00{entries.length - index}</span><h2>{title}</h2><p>{text}</p></div></article>
+		))}
+	</section>
+</BaseLayout>
+<style>
+	.log { max-width: 900px; padding-top: 48px; }
+	article { display: grid; grid-template-columns: 150px 1fr; gap: 50px; padding: 48px 0; border-bottom: 1px solid var(--line); }
+	time { color: var(--ink-soft); font-family: Georgia, serif; font-size: 13px; }
+	article span { color: var(--accent); font-size: 10px; font-weight: 700; letter-spacing: .14em; }
+	h2 { margin: 12px 0; font-family: var(--serif); font-size: 32px; font-weight: 600; }
+	article p { margin: 0; color: var(--ink-soft); }
+	@media (max-width: 620px) { article { grid-template-columns: 1fr; gap: 14px; } }
+</style>

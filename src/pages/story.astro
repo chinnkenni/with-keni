@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const timeline = [
+	['2010', '电脑城', '从修理电脑和硬件技术开始，也在工作之外自学软件与编程。'],
+	['2015', '重新学习观看', '从几乎没有美术基础开始学习原画。那不是一次顺利转行，而是第一次主动改写职业方向。'],
+	['2016—2020', '进入游戏行业', '在页游与手游团队中积累资产处理、性能、动效与人员协作经验。也经历项目结束、待业和对未来的怀疑。'],
+	['2020—2022', '从执行走向协作', '工作中管理与培训的比重逐渐增加。他开始关心一套流程如何让更多人产出得更好。'],
+	['2022—现在', '建设体系', '来到上海，逐渐负责游戏 UI 工业化基建、项目管理与 AI 技术方向。'],
+];
+---
+<BaseLayout title="他的故事 — With Keni" active="story">
+	<section class="page-intro wrap">
+		<p class="eyebrow">The non-standard route</p>
+		<h1>一条没有被预先<br />画好的路线</h1>
+		<p class="lead">如果只写结果，这段经历会显得过于顺利。这里更愿意记录每一次转弯发生之前，他看见了什么，又放弃了什么。</p>
+	</section>
+	<section class="timeline wrap">
+		{timeline.map(([year, title, text], index) => (
+			<article><span class="index">0{index + 1}</span><time>{year}</time><div><h2>{title}</h2><p>{text}</p></div></article>
+		))}
+	</section>
+</BaseLayout>
+<style>
+	.timeline { padding-top: 32px; }
+	article { display: grid; grid-template-columns: 60px 180px 1fr; gap: 30px; padding: 56px 0; border-bottom: 1px solid var(--line); }
+	.index { color: var(--accent); font-family: Georgia, serif; font-size: 11px; }
+	time { color: var(--ink-soft); font-family: Georgia, serif; font-size: 18px; }
+	h2 { margin: 0 0 16px; font-family: var(--serif); font-size: 34px; font-weight: 600; }
+	article p { max-width: 650px; margin: 0; color: var(--ink-soft); }
+	@media (max-width: 620px) { article { grid-template-columns: 40px 1fr; } article div { grid-column: 2; } }
+</style>
