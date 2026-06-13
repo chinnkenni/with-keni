@@ -9,7 +9,6 @@
 		"dev": "astro dev",
 		"build": "astro build",
 		"preview": "astro preview",
-		"deploy": "npm run build && wrangler pages deploy ./dist --project-name=with-keni",
 		"deploy:check": "npm run build",
 		"astro": "astro"
 	},

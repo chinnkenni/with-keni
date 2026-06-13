@@ -15,11 +15,9 @@ npm run dev
 
 ```sh
 npm run build
-npm run deploy:check
-npm run deploy
 ```
 
-站点输出到 `dist/`，通过 Cloudflare Pages 发布。
+站点输出到 `dist/`。推送到 GitHub 的 `main` 分支后，Cloudflare Pages 会自动构建并发布。
 
 ## 内容边界
 
