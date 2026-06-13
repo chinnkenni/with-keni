@@ -1,0 +1,12 @@
+---
+import LocalizedHome from '../../components/LocalizedHome.astro';
+import type { LocalizedLang } from '../../i18n/content';
+
+export function getStaticPaths() {
+	return ['ja', 'en'].map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as LocalizedLang;
+---
+
+<LocalizedHome lang={lang} />

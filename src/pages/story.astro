@@ -1,23 +1,40 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const timeline = [
-	['2010', '电脑城', '从修理电脑和硬件技术开始，也在工作之外自学软件与编程。'],
-	['2015', '重新学习观看', '从几乎没有美术基础开始学习原画。那不是一次顺利转行，而是第一次主动改写职业方向。'],
-	['2016—2020', '进入游戏行业', '在页游与手游团队中积累资产处理、性能、动效与人员协作经验。也经历项目结束、待业和对未来的怀疑。'],
-	['2020—2022', '从执行走向协作', '工作中管理与培训的比重逐渐增加。他开始关心一套流程如何让更多人产出得更好。'],
-	['2022—现在', '建设体系', '来到上海，逐渐负责游戏 UI 工业化基建、项目管理与 AI 技术方向。'],
+	['2010', '起点', '电脑城', '工作从修理电脑和处理硬件问题开始。与此同时，他在工作之外自学软件与编程，慢慢把注意力从一台机器扩展到机器背后的系统。'],
+	['2015', '主动转向', '重新学习观看', '几乎没有美术基础，却决定开始学习原画。这不是一次已经准备充分的转行，而是他第一次主动离开熟悉的能力，改写职业方向。'],
+	['2016—2020', '进入与代价', '进入游戏行业', '他在页游与手游团队中积累资产处理、性能、动效与协作经验。但这几年并不只意味着进入新行业，也包括项目结束、待业，以及对未来方向的怀疑。'],
+	['2020—2022', '视角变化', '从执行走向协作', '管理与培训在工作中的比重逐渐增加。问题开始从“我怎样把事情做好”，变成“一套流程怎样帮助更多人稳定地做好”。'],
+	['2022—现在', '新的阶段', '建设体系', '来到上海以后，他逐渐承担游戏 UI 工业化基建、项目管理与 AI 技术方向。过去分散积累的技术、视觉与协作经验，开始被组织成可复用的体系。'],
+];
+const missingScenes = [
+	['01', '电脑城里的一天', '第一次真正独立解决问题的机器是什么？当时面对的是怎样的人和故障？'],
+	['02', '决定学习原画之前', '2015 年究竟看见了什么，才愿意从熟悉的技术工作走向几乎没有基础的视觉领域？'],
+	['03', '项目结束以后', '待业和怀疑未来的阶段里，最难面对的是什么？又是什么让他继续留在游戏行业？'],
 ];
 ---
-<BaseLayout title="他的故事 — With Keni" active="story">
+<BaseLayout title="他的故事 — With Keni" active="story" pagePath="story">
 	<section class="page-intro wrap">
 		<p class="eyebrow">The non-standard route</p>
 		<h1>一条没有被预先<br />画好的路线</h1>
 		<p class="lead">如果只写结果，这段经历会显得过于顺利。这里更愿意记录每一次转弯发生之前，他看见了什么，又放弃了什么。</p>
 	</section>
 	<section class="timeline wrap">
-		{timeline.map(([year, title, text], index) => (
-			<article><span class="index">0{index + 1}</span><time>{year}</time><div><h2>{title}</h2><p>{text}</p></div></article>
+		{timeline.map(([year, turn, title, text], index) => (
+			<article><span class="index">0{index + 1}</span><time>{year}</time><div><span class="turn">{turn}</span><h2>{title}</h2><p>{text}</p></div></article>
 		))}
+	</section>
+	<section class="story-gaps wrap">
+		<div class="story-gaps-intro">
+			<p class="eyebrow">Scenes still missing</p>
+			<h2>年份已经清楚，<br />故事还需要现场</h2>
+			<p>目前的记录能够确认转折，却还不足以还原当时的声音、人物和犹豫。这些不是待补充的包装，而是下一轮口述真正要找回的部分。</p>
+		</div>
+		<div class="scene-list">
+			{missingScenes.map(([number, title, question]) => (
+				<article><span>{number}</span><div><h3>{title}</h3><p>{question}</p></div></article>
+			))}
+		</div>
 	</section>
 </BaseLayout>
 <style>
@@ -25,7 +42,25 @@ const timeline = [
 	article { display: grid; grid-template-columns: 60px 180px 1fr; gap: 30px; padding: 56px 0; border-bottom: 1px solid var(--line); }
 	.index { color: var(--accent); font-family: Georgia, serif; font-size: 11px; }
 	time { color: var(--ink-soft); font-family: Georgia, serif; font-size: 18px; }
+	.turn { display: block; margin-bottom: 12px; color: var(--accent); font-size: 10px; font-weight: 700; letter-spacing: .14em; }
 	h2 { margin: 0 0 16px; font-family: var(--serif); font-size: 34px; font-weight: 600; }
 	article p { max-width: 650px; margin: 0; color: var(--ink-soft); }
-	@media (max-width: 620px) { article { grid-template-columns: 40px 1fr; } article div { grid-column: 2; } }
+	.story-gaps { display: grid; grid-template-columns: .85fr 1.15fr; gap: 90px; margin-top: 96px; padding: 76px; background: var(--night); color: var(--white); }
+	.story-gaps-intro h2 { margin: 0 0 24px; font-family: var(--serif); font-size: clamp(34px, 4.5vw, 56px); font-weight: 600; line-height: 1.35; }
+	.story-gaps-intro > p:last-child { margin: 0; color: rgba(255, 255, 255, .56); }
+	.scene-list article { grid-template-columns: 42px 1fr; gap: 18px; padding: 24px 0; border-color: rgba(255, 255, 255, .16); }
+	.scene-list article:first-child { padding-top: 0; }
+	.scene-list span { color: var(--accent-soft); font-family: Georgia, serif; font-size: 12px; }
+	.scene-list h3 { margin: 0 0 8px; font-family: var(--serif); font-size: 22px; font-weight: 600; }
+	.scene-list p { color: rgba(255, 255, 255, .62); }
+	@media (max-width: 760px) {
+		.story-gaps { grid-template-columns: 1fr; gap: 48px; padding: 52px 36px; }
+	}
+	@media (max-width: 620px) {
+		.timeline article { grid-template-columns: 40px 1fr; }
+		.timeline article div { grid-column: 2; }
+		.story-gaps { margin-top: 64px; padding: 42px 24px; }
+		.scene-list article { grid-template-columns: 36px 1fr; }
+		.scene-list article div { grid-column: auto; }
+	}
 </style>
