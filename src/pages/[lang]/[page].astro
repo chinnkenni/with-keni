@@ -1,0 +1,18 @@
+---
+import LocalizedPage from '../../components/LocalizedPage.astro';
+import type { LocalizedLang, PageId } from '../../i18n/content';
+
+export function getStaticPaths() {
+	const languages = ['ja', 'en'];
+	const pages = ['story', 'notes', 'lab', 'devices', 'build-log'];
+
+	return languages.flatMap((lang) =>
+		pages.map((page) => ({ params: { lang, page } })),
+	);
+}
+
+const lang = Astro.params.lang as LocalizedLang;
+const page = Astro.params.page as PageId;
+---
+
+<LocalizedPage lang={lang} page={page} />

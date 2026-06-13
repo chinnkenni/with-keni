@@ -1,10 +1,12 @@
 import type { APIRoute } from 'astro';
 
 const pages = ['', 'story', 'notes', 'lab', 'devices', 'build-log'];
+const languages = ['', 'ja/', 'en/'];
 
 export const GET: APIRoute = ({ site }) => {
 	const base = site ?? new URL('https://withkeni.com');
-	const urls = pages
+	const urls = languages
+		.flatMap((language) => pages.map((path) => `${language}${path}`))
 		.map((path) => `<url><loc>${new URL(path, base).href}</loc></url>`)
 		.join('');
 

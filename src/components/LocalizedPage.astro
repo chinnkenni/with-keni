@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { pageContent, type LocalizedLang, type PageId } from '../i18n/content';
+
+interface Props {
+	lang: LocalizedLang;
+	page: PageId;
+}
+
+const { lang, page } = Astro.props;
+const content = pageContent[lang][page];
+const isStory = page === 'story';
+const isNotes = page === 'notes';
+const isLab = page === 'lab';
+const isDevices = page === 'devices';
+const isBuildLog = page === 'build-log';
+const buildLogContent = isBuildLog ? pageContent[lang]['build-log'] : null;
+---
+
+<BaseLayout title={content.title} active={page} lang={lang} pagePath={page}>
+	<section class="page-intro wrap">
+		<p class="eyebrow">{content.eyebrow}</p>
+		<h1>{content.heading[0]}<br />{content.heading[1]}</h1>
+		<p class="lead">{content.lead}</p>
+	</section>
+
+	{isStory && (
+		<>
+			<section class="timeline wrap">
+				{content.items.map(([year, turn, title, text], index) => (
+					<article><span class="index">0{index + 1}</span><time>{year}</time><div><span class="turn">{turn}</span><h2>{title}</h2><p>{text}</p></div></article>
+				))}
+			</section>
+			<section class="story-gaps wrap">
+				<div class="story-gaps-intro">
+					<p class="eyebrow">{content.gaps.eyebrow}</p>
+					<h2>{content.gaps.title}</h2>
+					<p>{content.gaps.copy}</p>
+				</div>
+				<div class="scene-list">
+					{content.gaps.items.map(([number, title, question]) => (
+						<article><span>{number}</span><div><h3>{title}</h3><p>{question}</p></div></article>
+					))}
+				</div>
+			</section>
+		</>
+	)}
+
+	{(isNotes || isDevices) && (
+		<section class="content-section wrap"><div class="card-grid">
+			{content.items.map(([type, title, text], index) => (
+				<article class="card">
+					<span class="number">{isNotes ? `${type} / 0${index + 1}` : type}</span>
+					<h3>{title}</h3><p>{text}</p>
+					{isNotes && <span class="text-link">{content.action}</span>}
+				</article>
+			))}
+		</div></section>
+	)}
+
+	{isLab && (
+		<section class="content-section wrap">
+			<div class="section-heading"><h2>{content.sectionTitle}</h2><p>{content.sectionCopy}</p></div>
+			<div class="card-grid">
+				<a class="card project-link" href="https://pmp.withkeni.com" target="_blank" rel="noopener noreferrer">
+					<span class="number live">{content.items[0][0]}</span>
+					<h3>{content.items[0][1]}</h3><p>{content.items[0][2]}</p>
+					<span class="text-link">{content.open}</span>
+				</a>
+				{content.items.slice(1).map(([type, title, text]) => (
+					<article class="card"><span class="number">{type}</span><h3>{title}</h3><p>{text}</p></article>
+				))}
+			</div>
+		</section>
+	)}
+
+	{isBuildLog && (
+		<>
+			<section class="log wrap">
+				{buildLogContent?.items.map(([date, title, text], index) => (
+					<article><time>{date}</time><div><span>LOG / 00{buildLogContent.items.length - index}</span><h2>{title}</h2><p>{text}</p></div></article>
+				))}
+			</section>
+			<section class="next-record wrap">
+				<p class="eyebrow">{buildLogContent?.nextRecord.label}</p>
+				<div class="next-record-grid">
+					<div>
+						<h2>{buildLogContent?.nextRecord.title}</h2>
+						<p>{buildLogContent?.nextRecord.copy}</p>
+					</div>
+					<ol>
+						{buildLogContent?.nextRecord.questions.map((question) => <li>{question}</li>)}
+					</ol>
+				</div>
+			</section>
+		</>
+	)}
+</BaseLayout>
+
+<style>
+	.timeline { padding-top: 32px; }
+	.timeline article { display: grid; grid-template-columns: 60px 180px 1fr; gap: 30px; padding: 56px 0; border-bottom: 1px solid var(--line); }
+	.timeline .index { color: var(--accent); font-family: Georgia, serif; font-size: 11px; }
+	.timeline time { color: var(--ink-soft); font-family: Georgia, serif; font-size: 18px; }
+	.timeline .turn { display: block; margin-bottom: 12px; color: var(--accent); font-size: 10px; font-weight: 700; letter-spacing: .14em; }
+	.timeline h2 { margin: 0 0 16px; font-family: var(--serif); font-size: 34px; font-weight: 600; }
+	.timeline p { max-width: 650px; margin: 0; color: var(--ink-soft); }
+	.story-gaps { display: grid; grid-template-columns: .85fr 1.15fr; gap: 90px; margin-top: 96px; padding: 76px; background: var(--night); color: var(--white); }
+	.story-gaps-intro h2 { margin: 0 0 24px; font-family: var(--serif); font-size: clamp(34px, 4.5vw, 56px); font-weight: 600; line-height: 1.35; }
+	.story-gaps-intro > p:last-child { margin: 0; color: rgba(255, 255, 255, .56); }
+	.scene-list article { display: grid; grid-template-columns: 42px 1fr; gap: 18px; padding: 24px 0; border-bottom: 1px solid rgba(255, 255, 255, .16); }
+	.scene-list article:first-child { padding-top: 0; }
+	.scene-list span { color: var(--accent-soft); font-family: Georgia, serif; font-size: 12px; }
+	.scene-list h3 { margin: 0 0 8px; font-family: var(--serif); font-size: 22px; font-weight: 600; }
+	.scene-list p { margin: 0; color: rgba(255, 255, 255, .62); }
+	.project-link { display: flex; flex-direction: column; }
+	.project-link h3 { margin-bottom: 12px; }
+	.project-link .text-link { margin-top: auto; padding-top: 24px; }
+	.project-link .text-link::after { content: '↗'; }
+	.live { display: flex; align-items: center; gap: 8px; }
+	.live::before { width: 7px; height: 7px; border-radius: 50%; background: #6b8f61; box-shadow: 0 0 0 4px rgba(107, 143, 97, 0.12); content: ''; }
+	.log { max-width: 900px; padding-top: 48px; }
+	.log article { display: grid; grid-template-columns: 150px 1fr; gap: 50px; padding: 48px 0; border-bottom: 1px solid var(--line); }
+	.log time { color: var(--ink-soft); font-family: Georgia, serif; font-size: 13px; }
+	.log article span { color: var(--accent); font-size: 10px; font-weight: 700; letter-spacing: .14em; }
+	.log h2 { margin: 12px 0; font-family: var(--serif); font-size: 32px; font-weight: 600; }
+	.log article p { margin: 0; color: var(--ink-soft); }
+	.next-record { margin-top: 96px; padding: 72px; background: var(--night); color: var(--white); }
+	.next-record-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 72px; }
+	.next-record h2 { margin: 0 0 24px; font-family: var(--serif); font-size: clamp(32px, 4vw, 52px); font-weight: 600; line-height: 1.35; }
+	.next-record p { margin: 0; color: rgba(255, 255, 255, 0.58); }
+	.next-record ol { margin: 0; padding: 0; list-style: none; counter-reset: question; }
+	.next-record li { display: grid; grid-template-columns: 42px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid rgba(255, 255, 255, 0.16); font-family: var(--serif); font-size: 18px; line-height: 1.7; counter-increment: question; }
+	.next-record li::before { color: var(--accent-soft); font-family: Georgia, serif; font-size: 12px; content: '0' counter(question); }
+	@media (max-width: 620px) {
+		.timeline article { grid-template-columns: 40px 1fr; }
+		.timeline article div { grid-column: 2; }
+		.story-gaps { margin-top: 64px; padding: 42px 24px; }
+		.scene-list article { grid-template-columns: 36px 1fr; }
+		.scene-list article div { grid-column: auto; }
+		.log article { grid-template-columns: 1fr; gap: 14px; }
+		.next-record { margin-top: 64px; padding: 42px 24px; }
+		.next-record-grid { grid-template-columns: 1fr; gap: 42px; }
+	}
+	@media (min-width: 621px) and (max-width: 760px) {
+		.story-gaps { grid-template-columns: 1fr; gap: 48px; padding: 52px 36px; }
+	}
+</style>

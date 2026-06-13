@@ -1,17 +1,38 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const entries = [
+	['2026.06.13', '从履历走向故事', '“他的故事”不再只列出年份和结果，而是标出每次转折的角色，并公开保留尚未采集到的具体场景。我们决定用继续访谈来增加代入感，而不是用虚构细节填满空白。'],
+	['2026.06.13', '第一次口述补充', 'Keni 补充了学习语言的真实起点：日语来自日本旅行中的基础沟通需要，英语来自编程和技术文档。已有开发词汇的积累，但日常表达与语法仍需补足，未来目标是生活与商业交流。'],
+	['2026.06.13', '三种语言，一条学习线', '站点加入中、日、英三种语言。这不只是给访客看的翻译，也会成为 Keni 今后持续学习日语和英语的长期练习场。'],
+	['2026.06.13', '把功能写回故事', '我们决定不把多语言停在技术完成上，而要把它连接到个人目标和档案的成长。AI 记录员也需要在开发之外，继续向 Keni 提问并收集他的经历。'],
 	['2026.06.13', '第一版站点', '建立故事、观察、实验室、设备间和共建日志五个入口，确立温暖而克制的视觉方向。'],
 	['2026.06.13', '名字与边界', '公开名称确定为 ChinKeni，站点域名选择 withkeni.com；真实身份信息默认不公开。'],
 	['2026.06.13', '记录开始', 'Keni 决定让 AI 作为记录员与代理人，从第三人称角度介绍他。'],
 ];
+const questions = [
+	'第一次去日本时，有没有一个因为语言而印象很深的具体场景？',
+	'哪些技术文档或开发经历，让你第一次发现自己已经能直接理解不少英文？',
+	'你最希望先应对哪一种日常或商业交流场景？',
+];
 ---
-<BaseLayout title="共建日志 — With Keni" active="build-log">
+<BaseLayout title="共建日志 — With Keni" active="build-log" pagePath="build-log">
 	<section class="page-intro wrap"><p class="eyebrow">Built in public</p><h1>这个网站怎样<br />被一起建造</h1><p class="lead">AI 参与设计、开发和维护，但不把协作藏在幕后。重要决定、失败和修改都会尽可能留下记录。</p></section>
 	<section class="log wrap">
 		{entries.map(([date, title, text], index) => (
 			<article><time>{date}</time><div><span>LOG / 00{entries.length - index}</span><h2>{title}</h2><p>{text}</p></div></article>
 		))}
+	</section>
+	<section class="next-record wrap">
+		<p class="eyebrow">下一次记录 / 继续听 Keni 讲</p>
+		<div class="next-record-grid">
+			<div>
+				<h2>从想学的语言里，<br />继续认识他</h2>
+				<p>第一段语言学习经历已经收进观察笔记。接下来继续追问具体场景，让记录不只停留在概括里。</p>
+			</div>
+			<ol>
+				{questions.map((question) => <li>{question}</li>)}
+			</ol>
+		</div>
 	</section>
 </BaseLayout>
 <style>
@@ -21,5 +42,16 @@ const entries = [
 	article span { color: var(--accent); font-size: 10px; font-weight: 700; letter-spacing: .14em; }
 	h2 { margin: 12px 0; font-family: var(--serif); font-size: 32px; font-weight: 600; }
 	article p { margin: 0; color: var(--ink-soft); }
-	@media (max-width: 620px) { article { grid-template-columns: 1fr; gap: 14px; } }
+	.next-record { margin-top: 96px; padding: 72px; background: var(--night); color: var(--white); }
+	.next-record-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 72px; }
+	.next-record h2 { margin: 0 0 24px; font-size: clamp(32px, 4vw, 52px); line-height: 1.35; }
+	.next-record p { margin: 0; color: rgba(255, 255, 255, 0.58); }
+	.next-record ol { margin: 0; padding: 0; list-style: none; counter-reset: question; }
+	.next-record li { display: grid; grid-template-columns: 42px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid rgba(255, 255, 255, 0.16); font-family: var(--serif); font-size: 18px; line-height: 1.7; counter-increment: question; }
+	.next-record li::before { color: var(--accent-soft); font-family: Georgia, serif; font-size: 12px; content: '0' counter(question); }
+	@media (max-width: 620px) {
+		article { grid-template-columns: 1fr; gap: 14px; }
+		.next-record { margin-top: 64px; padding: 42px 24px; }
+		.next-record-grid { grid-template-columns: 1fr; gap: 42px; }
+	}
 </style>
