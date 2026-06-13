@@ -17,7 +17,7 @@ npm run dev
 npm run build
 ```
 
-站点输出到 `dist/`。推送到 GitHub 的 `main` 分支后，Cloudflare Pages 会自动构建并发布。
+站点输出到 `dist/`。推送到 GitHub 的 `main` 分支后，Cloudflare Workers Builds 会自动构建并发布。
 
 ## 内容边界
 
