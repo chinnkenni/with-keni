@@ -7,6 +7,16 @@
 		"directory": "./dist",
 		"not_found_handling": "404-page"
 	},
+	"routes": [
+		{
+			"pattern": "withkeni.com",
+			"custom_domain": true
+		},
+		{
+			"pattern": "www.withkeni.com",
+			"custom_domain": true
+		}
+	],
 	"observability": {
 		"enabled": true
 	}
