@@ -67,8 +67,16 @@ const buildLogContent = isBuildLog ? pageContent[lang]['build-log'] : null;
 					<h3>{content.items[0][1]}</h3><p>{content.items[0][2]}</p>
 					<span class="text-link">{content.open}</span>
 				</a>
-				{content.items.slice(1).map(([type, title, text]) => (
-					<article class="card"><span class="number">{type}</span><h3>{title}</h3><p>{text}</p></article>
+				{content.items.slice(1).map(([type, title, text, href, action]) => (
+					href ? (
+						<a class="card project-link" href={href} target="_blank" rel="noopener noreferrer">
+							<span class="number">{type}</span>
+							<h3>{title}</h3><p>{text}</p>
+							<span class="text-link">{action}</span>
+						</a>
+					) : (
+						<article class="card"><span class="number">{type}</span><h3>{title}</h3><p>{text}</p></article>
+					)
 				))}
 			</div>
 		</section>

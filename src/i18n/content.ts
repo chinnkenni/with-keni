@@ -113,6 +113,7 @@ export const pageContent = {
 			sectionCopy: 'プロジェクトは段階的に公開します。会社の機密に関わる実装は、保護された資料を見せずに方法だけを扱います。',
 			items: [
 				['LIVE', 'PMP 模擬試験', '試験対策と知識の復習のための独立アプリ。現在公開中です。'],
+				['FRIENDS', 'WgetCloud 招待入口', '必要な友人が自分で開ける入口です。利用するかどうかは、自分のネットワーク環境と地域のルールを確認して判断してください。', 'https://invite.wgetcloud.ltd/auth/register?code=qQJ0', '入口を開く'],
 				['OBSERVING', 'AI 記録者', 'AI が長期的に一人の人間を理解しながら、事実、プライバシー、表現の境界を守る方法を探ります。'],
 				['PRACTICE', '制作工程の中の AI', '生成結果だけでなく、研修、アセット工程、反復作業に注目します。'],
 			],
@@ -202,6 +203,7 @@ export const pageContent = {
 			sectionCopy: 'Projects will be shared gradually. Work involving company confidentiality discusses methods without exposing protected material.',
 			items: [
 				['LIVE', 'PMP practice exam', 'A standalone app for exam preparation and knowledge review, now open to use.'],
+				['FRIENDS', 'WgetCloud invite', 'An entry point for friends who need it. Please decide whether it is appropriate for your own network environment and local rules before using it.', 'https://invite.wgetcloud.ltd/auth/register?code=qQJ0', 'Open invite'],
 				['OBSERVING', 'AI recorder', 'Exploring how AI can understand a person over time while respecting facts, privacy, and the boundaries of expression.'],
 				['PRACTICE', 'AI in production workflows', 'Looking at training, asset pipelines, and repetitive work, not only generated output.'],
 			],
