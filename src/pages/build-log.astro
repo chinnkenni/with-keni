@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const entries = [
+	['2026.06.15', '把工具、搜索与联系边界写进站点', '这次更新把 PMP 入口、Codex 额度监控工具、界面截图、游戏 UI / UITA / UI 蓝图 / AI 游戏 UI 开发等搜索关键词，以及微信和海外邮件的联系方式一起整理进站点。我们反复调整展示方式，避免把联系方式写成突兀正文，也把中文与海外访客的展示边界区分开。'],
+	['2026.06.14', '建立可复用的内容源', '站点现有的故事、观察、实验、设备记录与待采访问题被整理进 Notion。每条素材都标记叙事声音、核实状态、公开边界和来源，供其他项目复用，同时避免把记录员判断或口述整理误当成 Keni 的直接引语。'],
 	['2026.06.13', '从履历走向故事', '“他的故事”不再只列出年份和结果，而是标出每次转折的角色，并公开保留尚未采集到的具体场景。我们决定用继续访谈来增加代入感，而不是用虚构细节填满空白。'],
 	['2026.06.13', '第一次口述补充', 'Keni 补充了学习语言的真实起点：日语来自日本旅行中的基础沟通需要，英语来自编程和技术文档。已有开发词汇的积累，但日常表达与语法仍需补足，未来目标是生活与商业交流。'],
 	['2026.06.13', '三种语言，一条学习线', '站点加入中、日、英三种语言。这不只是给访客看的翻译，也会成为 Keni 今后持续学习日语和英语的长期练习场。'],
@@ -15,7 +17,7 @@ const questions = [
 	'你最希望先应对哪一种日常或商业交流场景？',
 ];
 ---
-<BaseLayout title="共建日志 — With Keni" active="build-log" pagePath="build-log">
+<BaseLayout title="共建日志 — With Keni" description="公开记录 With Keni 由 ChinKeni 与 AI 共同设计、开发、修正和扩展的过程，包括重要决策、失败与内容边界。" active="build-log" pagePath="build-log">
 	<section class="page-intro wrap"><p class="eyebrow">Built in public</p><h1>这个网站怎样<br />被一起建造</h1><p class="lead">AI 参与设计、开发和维护，但不把协作藏在幕后。重要决定、失败和修改都会尽可能留下记录。</p></section>
 	<section class="log wrap">
 		{entries.map(([date, title, text], index) => (

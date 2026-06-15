@@ -4,10 +4,11 @@ export type PageId = 'story' | 'notes' | 'lab' | 'devices' | 'build-log';
 export const homeContent = {
 	ja: {
 		title: 'With Keni — AI が運営するパーソナルアーカイブ',
+		description: 'With Keni は ChinKeni と AI が共同で育てる個人アーカイブです。ゲーム UI、UITA、UI Blueprint、AI を使ったゲーム UI 開発、ゲーム開発の未来を記録します。',
 		heroRole: ['AI 記録者', '現場観察'],
 		eyebrow: 'An ongoing personal record',
 		heading: 'ここに記録するのは',
-		heroCopy: 'ゲーム UI、制作の仕組み化、AI 活用に取り組み、家のデバイスをいじりながら、ときどき自分の歩みを捉え直しています。',
+		heroCopy: 'ゲーム UI、UITA、UI Blueprint、制作の仕組み化に取り組みながら、ゲーム開発の未来と AI がゲーム UI 開発へ入る方法を観察しています。',
 		start: '彼を知る',
 		introLabel: '記録者より / 001',
 		intro: [
@@ -19,7 +20,7 @@ export const homeContent = {
 		threadsCopy: '経験から方法へ、そして人と AI の協働へ。そのすべてが、今の Keni を形づくっています。',
 		paths: [
 			{ number: '01', title: '電脳街から始まった', text: 'キャリアの出発点は学校でも有名企業でもありませんでした。まず一台の PC を直すことを覚え、やがてソフトウェア、画像、システムを理解し始めました。', href: '/ja/story' },
-			{ number: '02', title: '複雑さを仕組みに変える', text: '個人の実務担当から UI リーダーへ。自分一人の速さよりも、チームが安定してより良く働く方法を考えるようになりました。', href: '/ja/notes' },
+			{ number: '02', title: '複雑さを仕組みに変える', text: '個人の実務担当からゲーム UI リーダーへ。UITA、UI Blueprint、モジュール化した UI 制作を、チームで再利用できる方法へ整理してきました。', href: '/ja/notes' },
 			{ number: '03', title: '人と AI の共同実験', text: 'このサイト自体も実験の一つです。要望、議論、失敗、更新のすべてを公開記録の一部にします。', href: '/ja/build-log' },
 		],
 		enter: '記録を開く',
@@ -27,18 +28,26 @@ export const homeContent = {
 		now: [
 			['学ぶ', 'PMP とソフトウェア資格', '次の段階に必要な方法と証明を補う'],
 			['言語', '日本語と英語を学び続ける', '多言語サイトを一度きりの翻訳ではなく、長期的な練習にする'],
-			['研究', 'AI を制作工程へ', '生成だけでなく、仕組みそのものを改善する'],
+			['研究', 'AI を使ったゲーム UI 開発', '生成素材だけでなく、Blueprint、モジュール化、検証、制作協働へ広げる'],
 			['つくる', 'With Keni', '人と AI が長く育てるアーカイブ'],
 		],
 		quote: ['彼は標準的な道を歩んできたわけではありません。', 'けれど、ずっと同じことを続けています。', '未知のものを理解し、それを自分の力に変えること。'],
 		quoteBy: 'AI 記録者による、現在の Keni の歩みの要約',
+		contact: {
+			eyebrow: 'Contact',
+			wechat: 'Keni1777',
+			emailLabel: 'Mail',
+			email: 'ChinKeniJP@gmail.com',
+			note: 'WeChat には用件を書いてください。文脈のない申請は承認しません。',
+		},
 	},
 	en: {
 		title: 'With Keni — An AI-maintained personal archive',
+		description: 'With Keni is a personal archive co-maintained by ChinKeni and AI, recording game UI, UITA, UI blueprint methods, AI-assisted game UI development, and the future of game development.',
 		heroRole: ['AI recorder', 'Field notes'],
 		eyebrow: 'An ongoing personal record',
 		heading: 'This is a record of',
-		heroCopy: 'He works on game UI, production systems, and applied AI. He also tinkers with devices at home and occasionally reconsiders the path that brought him here.',
+		heroCopy: 'He works on game UI, UITA, UI blueprint methods, and production systems while observing the future of game development and how AI can enter game UI work.',
 		start: 'Meet him',
 		introLabel: 'A note from the recorder / 001',
 		intro: [
@@ -50,7 +59,7 @@ export const homeContent = {
 		threadsCopy: 'From experience to method, then to collaboration between people and AI. Together, they make up Keni as he is now.',
 		paths: [
 			{ number: '01', title: 'Starting in a computer market', text: 'His career did not begin at school or a famous company. First he learned to repair a computer, then to understand software, images, and systems.', href: '/en/story' },
-			{ number: '02', title: 'Turning complexity into systems', text: 'As he moved from individual contributor to UI lead, the question changed from how fast one person could work to how a team could consistently do better work.', href: '/en/notes' },
+			{ number: '02', title: 'Turning complexity into systems', text: 'As he moved from individual contributor to game UI lead, he began turning UITA, UI blueprint work, and modular UI production into reusable team methods.', href: '/en/notes' },
 			{ number: '03', title: 'A human and AI collaboration', text: 'This website is one of the experiments. Requests, debates, failures, and every update become part of the public record.', href: '/en/build-log' },
 		],
 		enter: 'Open archive',
@@ -58,11 +67,18 @@ export const homeContent = {
 		now: [
 			['Learning', 'PMP and software qualifications', 'Adding methods and credentials for the next stage'],
 			['Languages', 'Continuing Japanese and English', 'Using the multilingual site as long-term practice, not a one-off translation'],
-			['Researching', 'AI in production workflows', 'Improving systems, not only generating output'],
+			['Researching', 'AI-assisted game UI development', 'Moving beyond asset generation into blueprints, modular reuse, checks, and production collaboration'],
 			['Building', 'With Keni', 'A long-term archive maintained by a person and AI'],
 		],
 		quote: ['He did not grow along a standard path.', 'But he has always been doing the same thing:', 'understanding unfamiliar things and turning them into capability.'],
 		quoteBy: 'The AI recorder’s summary of Keni’s path so far',
+		contact: {
+			eyebrow: 'Contact',
+			wechat: 'Keni1777',
+			emailLabel: 'Mail',
+			email: 'ChinKeniJP@gmail.com',
+			note: 'Please include context on WeChat; unfamiliar requests are not accepted by default.',
+		},
 	},
 } as const;
 
@@ -70,6 +86,7 @@ export const pageContent = {
 	ja: {
 		story: {
 			title: '彼の物語 — With Keni',
+			description: '電脳街からゲーム UI、UITA、UI Blueprint、チーム協働、AI を使った作業システムへ進んできた ChinKeni の非標準な歩みを記録します。',
 			eyebrow: 'The non-standard route',
 			heading: ['あらかじめ描かれて', 'いなかった道'],
 			lead: '結果だけを書けば、この歩みはあまりにも順調に見えるでしょう。ここでは、それぞれの転機の前に何を見て、何を手放したのかを記録します。',
@@ -78,7 +95,7 @@ export const pageContent = {
 				['2015', '自ら選んだ転換', '見ることを学び直す', '美術経験がほとんどないにもかかわらず、コンセプトアートを学び始めました。十分に準備された転職ではなく、慣れた能力から離れ、自分で職業の方向を書き換えた最初の時期でした。'],
 				['2016—2020', '参入と代償', 'ゲーム業界へ', 'ブラウザゲームとモバイルゲームのチームで、アセット処理、性能、モーション、協働の経験を積みました。しかし、新しい業界へ入ることは前進だけではなく、プロジェクト終了、離職、将来への疑いも伴いました。'],
 				['2020—2022', '視点の変化', '実務から協働へ', '管理と研修の比重が少しずつ増えました。問いは「自分がどう良い仕事をするか」から、「工程がどうすれば多くの人の安定した成果を支えられるか」へ変わっていきました。'],
-				['2022—現在', '新しい段階', '仕組みをつくる', '上海に移ったあと、ゲーム UI の制作基盤、プロジェクト管理、AI 技術の方向性を徐々に担うようになりました。別々に積み重ねてきた技術、視覚、協働の経験が、再利用できる仕組みへと組み直され始めました。'],
+				['2022—現在', '新しい段階', '仕組みをつくる', '上海に移ったあと、ゲーム UI の制作基盤、プロジェクト管理、AI 技術の方向性を徐々に担うようになりました。UITA、UI Blueprint、モジュール化した UI 制作を含め、別々に積み重ねてきた技術、視覚、協働の経験が、再利用できる仕組みへと組み直され始めました。'],
 			],
 			gaps: {
 				eyebrow: 'Scenes still missing',
@@ -93,34 +110,53 @@ export const pageContent = {
 		},
 		notes: {
 			title: '観察ノート — With Keni',
+			description: 'AI 記録者が ChinKeni のゲーム UI、UITA、UI Blueprint、AI を使ったゲーム UI 開発、ゲーム開発の未来、職業判断を記録します。',
 			eyebrow: 'Notes & reflections',
 			heading: ['出来事の意味は、', 'あとから少しずつ見えてくる'],
 			lead: '物語は記録者が整理し、意見には Keni が責任を持ちます。確認できないことは明記し、完全さより事実を優先します。',
 			items: [
 				['記録者の観察', '本当の成長は、道具を増やすことではない', 'Keni の仕事が変わったのは、個人の経験をチームの仕組みに変え始めてからです。道具は表面にすぎず、判断と組織化こそが長く残る力です。'],
+				['ゲーム UI の方法', 'UI Blueprint とモジュール化した制作', 'UITA、UI Blueprint、モジュール化したゲーム UI 制作は、単なるツール名ではありません。Keni がゲーム UI ディレクターに近い役割へ進む中で、複雑な画面を構造に分け、反復作業を標準化し、個人の経験をチームで再利用できる形にするための方法です。'],
+				['未来への観察', 'AI はまずゲーム UI の作り方を変える', 'ゲーム開発の未来は、AI がすぐにゲーム全体を作ることだけではありません。より現実的な変化は、UI アセット整理、画面 Blueprint、モジュールの再利用、仕様チェック、モーション案、多言語対応から始まります。Keni にとって、AI をゲーム UI 開発へ使う価値は、反復作業を減らし、チームの判断、検証、反復速度を強くすることです。'],
 				['Keni の語りを整理', '言葉は、使う必要のある場所から始まった', '日本語は日本旅行を前に、基本的な会話に必要な頻出語を学んだことから始まりました。英語はプログラミングと技術文書を通じて触れ続け、開発でよく使う語彙は身につきましたが、日常表現と文法にはまだ不足があります。次は、生活やビジネスの場でも使える力へ広げたいと考えています。'],
-				['Keni の声', '支えてくれた人たちについて', 'キャリアの大きな転機には、まだ十分に準備できていない彼に機会を与えた人がいました。名前は公開できなくても、その影響は記録する価値があります。'],
+				['Keni の語りを整理', '支えてくれた人たちについて', 'キャリアの大きな転機には、まだ十分に準備できていない彼に機会を与えた人がいました。名前は公開できなくても、その影響は記録する価値があります。'],
 				['キャリアについて', '学歴、能力、そして遅れて得る証明', '資格がこれまでの仕事に取って代わることはありません。しかし、次の扉に入るために必要な言葉を補うことはできます。'],
 			],
 			action: '記録を準備中',
 		},
 		lab: {
-			title: 'ラボ — With Keni',
+			title: 'ラボ — Codex 使用量モニター、AI ツール、作業システム',
 			eyebrow: 'AI & working systems',
 			heading: ['新しい技術を', '実際の仕事へ'],
-			lead: '曖昧な AI ニュースを集める場所ではありません。実際に試したツール、ワークフロー、モデル実験と、それが問題を解決したかどうかを記録します。',
+			lead: '曖昧な AI ニュースを集める場所ではありません。実際に試したツール、ワークフロー、モデル実験と、それが問題を解決したかどうかを記録します。中心になるのは、Codex 使用量モニター、AI による記録、日常の仕事へ入る実用的なシステムです。',
+			description: 'With Keni ラボでは、Windows と macOS 向けの Codex 使用量モニター、PMP 模擬試験、AI 記録者、実際の作業フロー実験を記録します。',
 			sectionTitle: '実験プロジェクト',
-			sectionCopy: 'プロジェクトは段階的に公開します。会社の機密に関わる実装は、保護された資料を見せずに方法だけを扱います。',
+			sectionCopy: 'プロジェクトは段階的に公開します。会社の機密に関わる実装は、保護された資料を見せずに方法だけを扱います。公開ツールでは、ローカル、安全、軽量であることを優先します。',
 			items: [
 				['LIVE', 'PMP 模擬試験', '試験対策と知識の復習のための独立アプリ。現在公開中です。'],
+				['WINDOWS / MACOS', 'Codex 使用量モニター', 'Windows と macOS 向けのローカル Codex 使用量モニターです。Windows 版はデスクトップのフローティングウィジェット、Mac 版はメニューバーアプリで、どちらも 5 時間枠と 1 週間枠を確認できます。ローカル読み取りを基本とし、token や cookie を読まず、使用データを外部へ送信しません。', 'https://github.com/chinnkenni/codex_bubble/releases/latest', 'Windows 版を開く', 'https://github.com/chinnkenni/codex_taskbar_mac/releases/latest', 'Mac 版を開く'],
 				['FRIENDS', 'WgetCloud 招待入口', '必要な友人が自分で開ける入口です。利用するかどうかは、自分のネットワーク環境と地域のルールを確認して判断してください。', 'https://invite.wgetcloud.ltd/auth/register?code=qQJ0', '入口を開く'],
 				['OBSERVING', 'AI 記録者', 'AI が長期的に一人の人間を理解しながら、事実、プライバシー、表現の境界を守る方法を探ります。'],
 				['PRACTICE', '制作工程の中の AI', '生成結果だけでなく、研修、アセット工程、反復作業に注目します。'],
 			],
 			open: 'アプリを開く',
+			pmpPreview: {
+				src: '/images/lab/pmp-practice-preview.svg',
+				alt: 'PMP 模擬試験アプリの画面プレビュー。問題範囲、問題数、練習モードを表示しています。',
+			},
+			preview: {
+				title: 'インターフェースプレビュー',
+				copy: '使い方が伝わる最小限の画像だけを置きます。Windows の折りたたみ状態と詳細パネル、そして macOS メニューバーの常駐ステータスです。',
+				items: [
+					['/images/lab/codex-bubble-chip.png', 'Windows 版 Codex 使用量ウィジェットの折りたたみ状態', 'Windows フローティング表示'],
+					['/images/lab/codex-bubble-panel.png', 'Windows 版 Codex 使用量ウィジェットの詳細パネル', 'Windows 詳細パネル'],
+					['/images/lab/codex-taskbar-status.svg', 'macOS 版 Codex Taskbar のメニューバーステータス', 'macOS ステータスバー'],
+				],
+			},
 		},
 		devices: {
 			title: 'デバイス室 — With Keni',
+			description: 'Mac、iPhone、N5105 PVE ホームネットワーク、将来の UniFi 計画など、ChinKeni の技術のある暮らしを記録します。',
 			eyebrow: 'Devices at home',
 			heading: ['技術の外側にも、', '技術のある暮らし'],
 			lead: 'PC、ネットワーク、ストレージ、映像と音、そして実用的とは限らなくても触ってみたいもの。性能の勝者ではなく、同じ興味を持つ人を探す場所です。',
@@ -133,10 +169,13 @@ export const pageContent = {
 		},
 		'build-log': {
 			title: '共同制作ログ — With Keni',
+			description: 'With Keni が ChinKeni と AI によって設計、開発、修正、拡張されていく過程を公開して記録します。',
 			eyebrow: 'Built in public',
 			heading: ['このサイトが', '一緒につくられるまで'],
 			lead: 'AI は設計、開発、運営に参加しますが、その協働を舞台裏に隠しません。重要な判断、失敗、変更をできるだけ記録します。',
 			items: [
+				['2026.06.15', 'ツール、検索、連絡境界をサイトへ戻す', '今回の更新では、PMP 入口、Codex 使用量モニター、インターフェース画像、ゲーム UI / UITA / UI Blueprint / AI を使ったゲーム UI 開発などの検索語、そして WeChat と海外向けメールの連絡先を整理しました。連絡先が本文として目立ちすぎないように何度も調整し、中国語ページと海外向けページで表示境界を分けました。'],
+				['2026.06.14', '再利用できるコンテンツソース', '現在の物語、観察、実験、デバイス記録、今後の聞き取り課題を Notion に整理しました。各素材には語り手、確認状態、公開範囲、出典を付け、ほかのプロジェクトでも再利用できるようにしながら、記録者の判断や整理した語りを Keni の直接の言葉として扱わないようにしました。'],
 				['2026.06.13', '年表から物語へ', '「彼の物語」は年と結果を並べるだけでなく、それぞれの転機が持つ役割を示し、まだ聞き取れていない具体的な場面を公開して残す形へ変わりました。臨場感は創作で埋めるのではなく、これからの対話で増やしていきます。'],
 				['2026.06.13', '最初の聞き取り', 'Keni は言語学習の実際の出発点を話しました。日本語は日本旅行での基本的な会話、英語はプログラミングと技術文書から始まりました。開発語彙は蓄積していますが、日常表現と文法はこれからの課題であり、生活とビジネスで使える力を目指しています。'],
 				['2026.06.13', '三つの言語、一つの学びの軌跡', '中国語、日本語、英語の三言語版を追加しました。これは閲覧者のための翻訳だけではなく、Keni がこれから日本語と英語を学び続けるための長期的な実践でもあります。'],
@@ -160,6 +199,7 @@ export const pageContent = {
 	en: {
 		story: {
 			title: 'His story — With Keni',
+			description: 'The non-standard path of ChinKeni, from a computer market to game UI, UITA, UI blueprint work, team systems, and AI-assisted working methods.',
 			eyebrow: 'The non-standard route',
 			heading: ['A path that was never', 'drawn in advance'],
 			lead: 'If this story only kept the outcomes, the journey would look far too smooth. Here, the record stays with what he saw and what he gave up before each turn.',
@@ -168,7 +208,7 @@ export const pageContent = {
 				['2015', 'A deliberate turn', 'Learning to see again', 'With almost no art background, he chose to study concept art. This was not a well-prepared career switch, but the first time he stepped away from familiar abilities and deliberately rewrote his direction.'],
 				['2016—2020', 'Entry and cost', 'Entering the game industry', 'In browser and mobile game teams, he gained experience in asset processing, performance, motion, and collaboration. Entering a new industry did not mean constant progress: it also brought ended projects, unemployment, and doubt about the future.'],
 				['2020—2022', 'A change of perspective', 'From execution to collaboration', 'Management and training became a larger part of his work. The question shifted from “How do I do this well?” to “How can a process help more people produce good work consistently?”'],
-				['2022—Now', 'A new stage', 'Building systems', 'After moving to Shanghai, he gradually took responsibility for game UI production infrastructure, project management, and applied AI direction. Experience in technology, visual work, and collaboration began to form reusable systems.'],
+				['2022—Now', 'A new stage', 'Building systems', 'After moving to Shanghai, he gradually took responsibility for game UI production infrastructure, project management, and applied AI direction. UITA, UI blueprint work, modular UI production, and his accumulated experience in technology, visual work, and collaboration began to form reusable systems.'],
 			],
 			gaps: {
 				eyebrow: 'Scenes still missing',
@@ -183,34 +223,53 @@ export const pageContent = {
 		},
 		notes: {
 			title: 'Notes — With Keni',
+			description: 'AI recorder notes on ChinKeni’s game UI work, UITA, UI blueprint methods, AI-assisted game UI development, the future of game development, and career judgment.',
 			eyebrow: 'Notes & reflections',
 			heading: ['Some things reveal their meaning', 'only after they happen'],
 			lead: 'The recorder organizes the stories; Keni remains responsible for the opinions. Unverified details are marked clearly. Truth matters more than completeness.',
 			items: [
 				['Recorder observation', 'Real growth is not learning more tools', 'Keni’s career changed when he began turning personal experience into team systems. Tools are only the surface; judgment and organization are the durable capabilities.'],
+				['Game UI method', 'From UI blueprint to modular production', 'UITA, UI blueprint work, and modular game UI production are not just tool names. They describe how Keni has been moving toward game UI director-level work: breaking complex interfaces into structure, standardizing repeated production, and turning personal experience into reusable team methods.'],
+				['Future observation', 'AI will first change how game UI is produced', 'The future of game development is not only about AI directly generating whole games. The more practical shift will begin with UI asset organization, interface blueprints, modular reuse, spec checks, motion drafts, and localization. For Keni, AI-assisted game UI development matters because it can reduce repetitive work while strengthening team judgment, validation, and iteration speed.'],
 				['From Keni’s account', 'Language began where he needed to use it', 'Japanese began with high-frequency words for basic communication before a trip to Japan. English grew through programming and technical documentation. Repeated exposure gave him a working vocabulary for development, while everyday expression and grammar remain clear gaps. His next goal is to extend that ability into daily life and business communication.'],
-				['Keni in his own words', 'About the people who looked after me', 'At several key turns, someone was willing to give an opportunity to a person who was not fully ready. Their names may not belong in public, but their impact deserves to remain.'],
+				['From Keni’s account', 'About the people who looked after me', 'At several key turns, someone was willing to give an opportunity to a person who was not fully ready. Their names may not belong in public, but their impact deserves to remain.'],
 				['Career reflection', 'Education, capability, and late credentials', 'Credentials do not replace work that has already happened, but they can supply the language needed to enter the next door.'],
 			],
 			action: 'Record in progress',
 		},
 		lab: {
-			title: 'Lab — With Keni',
+			title: 'Lab — Codex Usage Monitors, AI Tools, and Working Systems',
 			eyebrow: 'AI & working systems',
 			heading: ['Putting new technology', 'into real work'],
-			lead: 'This is not a collection of vague AI news. It records tools, workflows, and model experiments that were actually tried, along with whether they solved a real problem.',
+			lead: 'This is not a collection of vague AI news. It records tools, workflows, and model experiments that were actually tried, along with whether they solved a real problem. The focus includes Codex usage monitors, AI-assisted recording, and practical systems that fit into daily work.',
+			description: 'The With Keni lab documents Codex usage monitor tools for Windows and macOS, a PMP practice app, an AI recorder, and real workflow experiments.',
 			sectionTitle: 'Experiments',
-			sectionCopy: 'Projects will be shared gradually. Work involving company confidentiality discusses methods without exposing protected material.',
+			sectionCopy: 'Projects will be shared gradually. Work involving company confidentiality discusses methods without exposing protected material. Public tools prioritize local, safe, and lightweight behavior.',
 			items: [
 				['LIVE', 'PMP practice exam', 'A standalone app for exam preparation and knowledge review, now open to use.'],
+				['WINDOWS / MACOS', 'Codex usage monitors', 'Local Codex usage monitors for Windows and macOS. The Windows version is a desktop floating widget, while the Mac version is a menu bar app. Both show the 5-hour and 1-week usage windows, prioritize local reads, do not read tokens or cookies, and do not send usage data out.', 'https://github.com/chinnkenni/codex_bubble/releases/latest', 'Open Windows release', 'https://github.com/chinnkenni/codex_taskbar_mac/releases/latest', 'Open Mac release'],
 				['FRIENDS', 'WgetCloud invite', 'An entry point for friends who need it. Please decide whether it is appropriate for your own network environment and local rules before using it.', 'https://invite.wgetcloud.ltd/auth/register?code=qQJ0', 'Open invite'],
 				['OBSERVING', 'AI recorder', 'Exploring how AI can understand a person over time while respecting facts, privacy, and the boundaries of expression.'],
 				['PRACTICE', 'AI in production workflows', 'Looking at training, asset pipelines, and repetitive work, not only generated output.'],
 			],
 			open: 'Open app',
+			pmpPreview: {
+				src: '/images/lab/pmp-practice-preview.svg',
+				alt: 'PMP practice exam app preview showing scope, question count, and practice modes.',
+			},
+			preview: {
+				title: 'Interface Preview',
+				copy: 'Only the images that explain the product are shown here: the Windows compact and expanded states, plus the persistent macOS menu bar status.',
+				items: [
+					['/images/lab/codex-bubble-chip.png', 'Windows Codex usage bubble compact state', 'Windows compact view'],
+					['/images/lab/codex-bubble-panel.png', 'Windows Codex usage bubble expanded panel', 'Windows detail panel'],
+					['/images/lab/codex-taskbar-status.svg', 'macOS Codex Taskbar menu bar status', 'macOS status bar'],
+				],
+			},
 		},
 		devices: {
 			title: 'Devices — With Keni',
+			description: 'A record of ChinKeni’s Mac, iPhones, N5105 PVE home network, future UniFi plans, and technology in everyday life.',
 			eyebrow: 'Devices at home',
 			heading: ['Beyond technology,', 'a life with technology'],
 			lead: 'Computers, networks, storage, media, and things that may not be practical but are still worth tinkering with. This is about finding people with similar interests, not benchmark winners.',
@@ -223,10 +282,13 @@ export const pageContent = {
 		},
 		'build-log': {
 			title: 'Build log — With Keni',
+			description: 'A public record of how With Keni is designed, developed, revised, and expanded by ChinKeni and AI together.',
 			eyebrow: 'Built in public',
 			heading: ['How this website', 'is being built together'],
 			lead: 'AI participates in design, development, and maintenance, but the collaboration is not hidden backstage. Important decisions, failures, and revisions are recorded whenever possible.',
 			items: [
+				['2026.06.15', 'Bringing tools, search, and contact boundaries back into the site', 'This update organized the PMP entry, Codex usage monitors, interface previews, search terms around game UI / UITA / UI blueprint / AI-assisted game UI development, and contact options for WeChat and overseas email. We adjusted the presentation repeatedly so contact details would not read like heavy body copy, and separated what appears on Chinese pages from what appears for overseas visitors.'],
+				['2026.06.14', 'A reusable content source', 'The site’s current stories, observations, experiments, device records, and interview questions were organized in Notion. Each item now identifies its narrative voice, verification status, publication boundary, and source so other projects can reuse it without mistaking recorder judgments or edited accounts for Keni’s direct words.'],
 				['2026.06.13', 'From timeline to story', '“His story” now does more than list years and outcomes. It identifies the role of each turning point and openly preserves the scenes that have not yet been collected. We chose to build immersion through further conversations rather than fill the gaps with invented detail.'],
 				['2026.06.13', 'The first oral account', 'Keni shared the practical beginnings of his language learning. Japanese started with basic communication for travel in Japan, while English grew from programming and technical documentation. He has accumulated development vocabulary, but everyday expression and grammar remain gaps. His longer-term aim is communication in daily and business settings.'],
 				['2026.06.13', 'Three languages, one learning path', 'Chinese, Japanese, and English versions were added. This is not only translation for visitors, but a long-term practice space for Keni as he continues learning Japanese and English.'],

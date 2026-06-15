@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="460" viewBox="0 0 760 460" role="img" aria-labelledby="title desc">
+	<title id="title">PMP practice exam interface preview</title>
+	<desc id="desc">A compact preview of the PMP practice app with exam scope, question count, shuffle setting, and practice modes.</desc>
+	<rect width="760" height="460" rx="30" fill="#f6f7ff"/>
+	<rect x="52" y="38" width="656" height="384" rx="30" fill="#fffdf7"/>
+	<rect x="340" y="78" width="80" height="80" rx="22" fill="#eceafd"/>
+	<path d="M380 112l30 15-30 16-30-16 30-15z" fill="none" stroke="#5146e5" stroke-width="5" stroke-linejoin="round"/>
+	<path d="M357 132v21l23 13 23-13v-21" fill="none" stroke="#5146e5" stroke-width="5" stroke-linejoin="round"/>
+	<text x="380" y="208" text-anchor="middle" fill="#322e9d" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="44" font-weight="800">PMP 模拟考试</text>
+	<text x="380" y="250" text-anchor="middle" fill="#526071" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="20" font-weight="700">全部题库 · 110 道题 · 约 165 分钟</text>
+	<rect x="140" y="286" width="480" height="52" rx="14" fill="#f5f4ff" stroke="#5146e5" stroke-width="3"/>
+	<circle cx="168" cy="312" r="9" fill="#fff" stroke="#5146e5" stroke-width="3"/>
+	<circle cx="168" cy="312" r="5" fill="#5146e5"/>
+	<text x="192" y="321" fill="#302d8c" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="20" font-weight="700">全部题目（110题）</text>
+	<rect x="140" y="356" width="150" height="48" rx="14" fill="#5146e5"/>
+	<rect x="305" y="356" width="150" height="48" rx="14" fill="#f7d5a3"/>
+	<rect x="470" y="356" width="150" height="48" rx="14" fill="#d0a6ef"/>
+	<text x="215" y="388" text-anchor="middle" fill="#fff" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="19" font-weight="700">普通练习</text>
+	<text x="380" y="388" text-anchor="middle" fill="#fff" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="19" font-weight="700">错题专项</text>
+	<text x="545" y="388" text-anchor="middle" fill="#fff" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="19" font-weight="700">混合练习</text>
+</svg>

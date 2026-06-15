@@ -89,7 +89,11 @@ nav a.active::after {
 	font-size: 12px;
 }
 .site-footer p { margin: 0; }
-.site-footer div { display: flex; gap: 24px; }
+.site-footer > div:last-child { display: flex; gap: 24px; }
+.footer-note { display: grid; gap: 8px; max-width: 620px; }
+.footer-note p:last-child { color: rgba(88, 87, 79, .72); font-size: 11px; }
+.footer-contact { display: flex; flex-wrap: wrap; gap: 5px; align-items: baseline; }
+.footer-contact strong { color: var(--accent); font-family: Georgia, serif; font-size: 12px; letter-spacing: .02em; }
 .site-footer a { color: var(--accent); }
 .eyebrow {
 	display: flex;
@@ -150,5 +154,5 @@ nav a.active::after {
 	.page-intro { padding: 64px 0 52px; }
 	.page-intro .lead { font-size: 15px; }
 	.section-heading, .site-footer { align-items: start; flex-direction: column; }
-	.site-footer div { flex-direction: column; gap: 8px; }
+	.site-footer > div:last-child { flex-direction: column; gap: 8px; }
 }

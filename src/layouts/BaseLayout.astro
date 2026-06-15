@@ -25,6 +25,12 @@ const copy = {
 		navLabel: '主导航',
 		status: 'AI 正在维护',
 		footer: 'ChinKeni 提供经历与判断，AI 负责追问、整理与维护。',
+		contactLabel: '联系',
+		emailLabel: '',
+		email: '',
+		wechatLabel: '微信',
+		wechat: 'Keni1777',
+		contactHint: '请备注来意',
 		buildLog: '查看建造过程',
 		nav: ['他的故事', '观察笔记', '实验室', '设备间', '共建日志'],
 	},
@@ -35,6 +41,13 @@ const copy = {
 		navLabel: 'メインナビゲーション',
 		status: 'AI が更新中',
 		footer: 'ChinKeni が経験と判断を提供し、AI が問い、整理し、運営します。',
+		contactLabel: 'Contact',
+		emailLabel: 'Mail',
+		email: 'ChinKeniJP@gmail.com',
+		emailHref: 'mailto:chinkenijp@gmail.com',
+		wechatLabel: 'WeChat',
+		wechat: 'Keni1777',
+		contactHint: '用件を書いてください',
 		buildLog: '制作の記録を見る',
 		nav: ['彼の物語', '観察ノート', 'ラボ', 'デバイス室', '共同制作ログ'],
 	},
@@ -45,12 +58,20 @@ const copy = {
 		navLabel: 'Main navigation',
 		status: 'Maintained by AI',
 		footer: 'ChinKeni provides the experience and judgment; AI asks, organizes, and maintains.',
+		contactLabel: 'Contact',
+		emailLabel: 'Mail',
+		email: 'ChinKeniJP@gmail.com',
+		emailHref: 'mailto:chinkenijp@gmail.com',
+		wechatLabel: 'WeChat',
+		wechat: 'Keni1777',
+		contactHint: 'include context',
 		buildLog: 'View the build process',
 		nav: ['His story', 'Notes', 'Lab', 'Devices', 'Build log'],
 	},
 } as const;
 
 const current = copy[lang];
+const metaDescription = description ?? current.description;
 const route = pagePath ? `/${pagePath}` : '';
 const localeRoot = lang === 'zh' ? '' : `/${lang}`;
 const localizedPath = (targetLang: 'zh' | 'ja' | 'en') =>
@@ -61,6 +82,54 @@ const navItems = ['story', 'notes', 'lab', 'devices', 'build-log'].map((id, inde
 	id,
 }));
 const canonicalUrl = new URL(localizedPath(lang), Astro.site);
+const ogLocale = lang === 'zh' ? 'zh_CN' : lang === 'ja' ? 'ja_JP' : 'en_US';
+const alternateLocales = ['zh_CN', 'ja_JP', 'en_US'].filter((locale) => locale !== ogLocale);
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'Person',
+			'@id': new URL('/#chinkeni', Astro.site).href,
+			name: 'ChinKeni',
+			alternateName: 'Keni',
+			url: new URL('/', Astro.site).href,
+			email: 'mailto:ChinKeniJP@gmail.com',
+			knowsAbout: [
+				'Game UI',
+				'游戏 UI',
+				'游戏 UI 总监',
+				'UITA',
+				'UI 拼图',
+				'UI 蓝图',
+				'UI Blueprint',
+				'Modular UI production',
+				'Future of game development',
+				'游戏开发未来趋势',
+				'AI game UI development',
+				'AI-assisted game UI',
+				'AI 游戏 UI 开发',
+				'AI workflow',
+				'Codex usage monitor',
+				'PMP practice exam',
+			],
+		},
+		{
+			'@type': 'WebPage',
+			'@id': canonicalUrl.href,
+			url: canonicalUrl.href,
+			name: title,
+			description: metaDescription,
+			inLanguage: current.htmlLang,
+			isPartOf: {
+				'@type': 'WebSite',
+				'@id': new URL('/#website', Astro.site).href,
+				name: 'With Keni',
+				url: new URL('/', Astro.site).href,
+			},
+			about: { '@id': new URL('/#chinkeni', Astro.site).href },
+		},
+	],
+};
 ---
 
 <!doctype html>
@@ -68,8 +137,21 @@ const canonicalUrl = new URL(localizedPath(lang), Astro.site);
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="description" content={description ?? current.description} />
+		<meta name="description" content={metaDescription} />
+		<meta name="author" content="ChinKeni" />
+		<meta name="robots" content="index, follow" />
 		<meta name="theme-color" content="#171713" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="With Keni" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={metaDescription} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:locale" content={ogLocale} />
+		{alternateLocales.map((locale) => <meta property="og:locale:alternate" content={locale} />)}
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={metaDescription} />
+		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="canonical" href={canonicalUrl} />
 		<link rel="alternate" hreflang="zh-CN" href={new URL(localizedPath('zh'), Astro.site)} />
@@ -107,7 +189,16 @@ const canonicalUrl = new URL(localizedPath(lang), Astro.site);
 			</header>
 			<main><slot /></main>
 			<footer class="site-footer wrap">
-				<p>{current.footer}</p>
+				<div class="footer-note">
+					<p>{current.footer}</p>
+					<p class="footer-contact">
+						<span>{current.contactLabel}:</span>
+						{current.email && <><span>{current.emailLabel}</span><a href={'emailHref' in current ? current.emailHref : `mailto:${current.email}`}>{current.email}</a><span>/</span></>}
+						<span>{current.wechatLabel}</span>
+						<strong>{current.wechat}</strong>
+						<span>({current.contactHint})</span>
+					</p>
+				</div>
 				<div>
 					<span>© {new Date().getFullYear()} With Keni</span>
 					<a href={`${localeRoot}/build-log`}>{current.buildLog}</a>
