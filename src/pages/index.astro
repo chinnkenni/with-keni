@@ -3,12 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const paths = [
 	{ number: '01', title: '从电脑城开始', text: '他的职业起点不在学校，也不在知名公司。先学会修好一台电脑，后来开始理解软件、图像与系统。', href: '/story' },
-	{ number: '02', title: '把复杂变成体系', text: '从个人执行者到 UI 负责人，他越来越关心的不是一个人能做多快，而是一群人如何稳定地做得更好。', href: '/notes' },
+	{ number: '02', title: '把复杂变成体系', text: '从个人执行者到游戏 UI 负责人，他开始把 UITA、UI 拼图、UI 蓝图等经验整理成可复用的方法。', href: '/notes' },
 	{ number: '03', title: '人与 AI 的共建实验', text: '这个网站本身就是实验之一。需求、争论、失败和每次更新，都会成为公开记录的一部分。', href: '/build-log' },
 ];
 ---
 
-<BaseLayout title="With Keni — 一份由 AI 维护的个人观察档案">
+<BaseLayout title="With Keni — 一份由 AI 维护的个人观察档案" description="With Keni 是 ChinKeni 与 AI 共同维护的个人观察档案，记录游戏 UI、UITA、UI 拼图、UI 蓝图、AI 游戏 UI 开发、游戏开发未来趋势与长期共建过程。">
 	<section class="hero wrap">
 		<div class="hero-aside">
 			<p class="edition">ARCHIVE 001<br />EST. 2026</p>
@@ -18,7 +18,7 @@ const paths = [
 		<div class="hero-main">
 			<p class="eyebrow">An ongoing personal record</p>
 			<h1>这里记录的是<br /><em>ChinKeni.</em></h1>
-			<p class="hero-copy">他做游戏 UI、工业化与 AI 应用，也折腾家里的设备，偶尔重新理解自己走过的路。</p>
+			<p class="hero-copy">他做游戏 UI、UITA、UI 拼图与 UI 蓝图相关的工业化方法，也观察游戏开发未来趋势和 AI 如何进入游戏 UI 开发。</p>
 			<a class="intro-link" href="#introduction"><span>开始认识他</span><i>↓</i></a>
 		</div>
 		<div class="hero-stamp" aria-hidden="true"><span>WITH</span><strong>K</strong><span>KENI</span></div>
@@ -54,7 +54,7 @@ const paths = [
 		<div class="now-list">
 			<div><span>学习</span><strong>PMP 与软件专业资格</strong><small>为下一阶段补全方法与证明</small></div>
 			<div><span>语言</span><strong>持续学习日语与英语</strong><small>让多语言站点成为长期练习，而不只是一次翻译</small></div>
-			<div><span>研究</span><strong>AI 如何进入生产流程</strong><small>不只生成内容，更要改善系统</small></div>
+			<div><span>研究</span><strong>AI 如何进入游戏 UI 开发</strong><small>从生成素材走向蓝图、拼图、检查与生产协同</small></div>
 			<div><span>建造</span><strong>With Keni</strong><small>一份由人与 AI 共同维护的长期档案</small></div>
 		</div>
 	</section>
@@ -66,6 +66,7 @@ const paths = [
 			<p>AI 记录员对 Keni 当前经历的概括</p>
 		</div>
 	</section>
+
 </BaseLayout>
 
 <style>

@@ -10,7 +10,7 @@ const { lang } = Astro.props;
 const content = homeContent[lang];
 ---
 
-<BaseLayout title={content.title} lang={lang}>
+<BaseLayout title={content.title} description={content.description} lang={lang}>
 	<section class="hero wrap">
 		<div class="hero-aside">
 			<p class="edition">ARCHIVE 001<br />EST. 2026</p>
@@ -65,6 +65,7 @@ const content = homeContent[lang];
 			<p>{content.quoteBy}</p>
 		</div>
 	</section>
+
 </BaseLayout>
 
 <style>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="72" viewBox="0 0 440 72" role="img" aria-labelledby="title desc">
+	<title id="title">macOS Codex menu bar status</title>
+	<desc id="desc">A compact menu bar status showing five-hour and one-week Codex usage windows.</desc>
+	<rect width="440" height="72" rx="0" fill="#4a4c3f"/>
+	<text x="22" y="45" fill="#f5f2e9" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="27" font-weight="700" letter-spacing=".2">
+		5h 56% 22:57 | 1w 84% 6月22日
+	</text>
+</svg>
