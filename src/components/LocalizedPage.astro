@@ -48,11 +48,11 @@ const buildLogContent = isBuildLog ? pageContent[lang]['build-log'] : null;
 
 	{(isNotes || isDevices) && (
 		<section class="content-section wrap"><div class="card-grid">
-			{content.items.map(([type, title, text], index) => (
+			{content.items.map(([type, title, text, status], index) => (
 				<article class="card">
 					<span class="number">{isNotes ? `${type} / 0${index + 1}` : type}</span>
 					<h3>{title}</h3><p>{text}</p>
-					{isNotes && <span class="text-link">{content.action}</span>}
+					{isNotes && <span class="text-link">{status}</span>}
 				</article>
 			))}
 		</div></section>
@@ -106,7 +106,7 @@ const buildLogContent = isBuildLog ? pageContent[lang]['build-log'] : null;
 		<>
 			<section class="log wrap">
 				{buildLogContent?.items.map(([date, title, text], index) => (
-					<article><time>{date}</time><div><span>LOG / 00{buildLogContent.items.length - index}</span><h2>{title}</h2><p>{text}</p></div></article>
+					<article><time>{date}</time><div><span>LOG / {String(buildLogContent.items.length - index).padStart(2, '0')}</span><h2>{title}</h2><p>{text}</p></div></article>
 				))}
 			</section>
 			<section class="next-record wrap">
