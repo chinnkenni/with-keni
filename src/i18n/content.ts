@@ -1,5 +1,5 @@
 export type LocalizedLang = 'ja' | 'en';
-export type PageId = 'story' | 'notes' | 'lab' | 'devices' | 'build-log';
+export type PageId = 'story' | 'notes' | 'games' | 'lab' | 'devices' | 'build-log';
 
 export const homeContent = {
 	ja: {
@@ -16,12 +16,14 @@ export const homeContent = {
 			'これは完成した自己紹介でも、きれいに整えられた成功物語でもありません。迷い、転機、興味、そしてまだ終わっていないことを残していきます。',
 		],
 		recorded: '2026.06.13 記録',
-		threadsTitle: '今も続いている三つの軌跡',
-		threadsCopy: '経験から方法へ、そして人と AI の協働へ。そのすべてが、今の Keni を形づくっています。',
+		threadsEyebrow: 'Four threads',
+		threadsTitle: '今も続いている四つの軌跡',
+		threadsCopy: '経験から方法へ、ゲーム制作へ、そして人と AI の協働へ。そのすべてが、今の Keni を形づくっています。',
 		paths: [
 			{ number: '01', title: '家族のPC関連の商いから始まった', text: 'キャリアの出発点は学校でも有名企業でもありませんでした。家族と一緒に商いを手伝う中で、まず一台の PC を直すことを覚え、やがてソフトウェア、画像、システムを理解し始めました。', href: '/ja/story' },
 			{ number: '02', title: '複雑さを仕組みに変える', text: '個人の実務担当からゲーム UI リーダーへ。UITA、UI Blueprint、モジュール化した UI 制作を、チームで再利用できる方法へ整理してきました。', href: '/ja/notes' },
-			{ number: '03', title: '人と AI の共同実験', text: 'このサイト自体も実験の一つです。要望、議論、失敗、更新のすべてを公開記録の一部にします。', href: '/ja/build-log' },
+			{ number: '03', title: 'AI ゲームの入口', text: '完成したゲームは一つずつカードにして、スクリーンショット、リンク、短い紹介と一緒に置いていきます。', href: '/ja/games' },
+			{ number: '04', title: '人と AI の共同実験', text: 'このサイト自体も実験の一つです。要望、議論、失敗、更新のすべてを公開記録の一部にします。', href: '/ja/build-log' },
 		],
 		enter: '記録を開く',
 		nowTitle: '今、この瞬間',
@@ -55,12 +57,14 @@ export const homeContent = {
 			'This is not a finished biography or a success story polished into a straight line. It keeps his doubts, turning points, interests, and unfinished work in view.',
 		],
 		recorded: 'Recorded 2026.06.13',
-		threadsTitle: 'Three threads still unfolding',
-		threadsCopy: 'From experience to method, then to collaboration between people and AI. Together, they make up Keni as he is now.',
+		threadsEyebrow: 'Four threads',
+		threadsTitle: 'Four threads still unfolding',
+		threadsCopy: 'From experience to method, to game creation, then to collaboration between people and AI. Together, they make up Keni as he is now.',
 		paths: [
 			{ number: '01', title: 'Starting in the family computer business', text: 'His career did not begin at school or a famous company. Helping with the family business, he first learned to repair computers, then began to understand software, images, and systems.', href: '/en/story' },
 			{ number: '02', title: 'Turning complexity into systems', text: 'As he moved from individual contributor to game UI lead, he began turning UITA, UI blueprint work, and modular UI production into reusable team methods.', href: '/en/notes' },
-			{ number: '03', title: 'A human and AI collaboration', text: 'This website is one of the experiments. Requests, debates, failures, and every update become part of the public record.', href: '/en/build-log' },
+			{ number: '03', title: 'AI game entries', text: 'Finished or shareable games will appear as simple cards with a screenshot, link, and short introduction.', href: '/en/games' },
+			{ number: '04', title: 'A human and AI collaboration', text: 'This website is one of the experiments. Requests, debates, failures, and every update become part of the public record.', href: '/en/build-log' },
 		],
 		enter: 'Open archive',
 		nowTitle: 'Right now',
@@ -125,6 +129,24 @@ export const pageContent = {
 				['キャリアについて', '学歴、能力、そして遅れて得る証明', '資格がこれまでの仕事に取って代わることはありません。しかし、次の扉に入るために必要な言葉を補うことはできます。', '職業判断'],
 			],
 		},
+		games: {
+			title: 'ゲームプロジェクト — With Keni',
+			description: 'With Keni のゲームリンク集です。AI ゲームごとにスクリーンショット、リンク、短い紹介を並べます。',
+			eyebrow: 'AI game projects',
+			heading: ['ゲームプロジェクトの', 'リンク集'],
+			lead: 'ここには複雑な開発記事ではなく、ゲームごとの入口を置きます。スクリーンショット、URL、短い紹介がそろったらカードを追加します。',
+			sectionTitle: 'ゲーム入口',
+			sectionCopy: 'ゲームごとに一枚のカードで並べます。画像、リンク、短い説明があれば追加できます。',
+			placeholder: 'スクリーンショット待ち',
+			projects: [
+				{
+					status: 'COMING SOON',
+					title: 'CodexWeb_Game',
+					text: 'AI ゲームプロジェクトの入口予定地です。スクリーンショット、アクセス先、短い紹介がそろったら、クリックできるカードにします。',
+					action: 'リンク待ち',
+				},
+			],
+		},
 		lab: {
 			title: 'ラボ — Codex 使用量モニター、AI ツール、作業システム',
 			eyebrow: 'AI & working systems',
@@ -175,7 +197,8 @@ export const pageContent = {
 			heading: ['このサイトが', '一緒につくられるまで'],
 			lead: 'AI は設計、開発、運営に参加しますが、その協働を舞台裏に隠しません。重要な判断、失敗、変更をできるだけ記録します。',
 			items: [
-				['2026.06.16', '出発点を確かめ、agent 調整へ書き込む', 'Notion の素材庫に、初期のスクリプトツール、AI 使用枠アップグレードの体験、AI 記録員の当番室という構想が追加されました。サイトには公開に適した二つの観察ノートだけを先に反映し、「AI 記録員当番室」は確認待ちの方向として残しました。同時に、物語の出発点を曖昧な「電脳街」から、家族のPC関連の商いを手伝っていた実際の場面へ修正しました。新しい栏目を自動で作らず、経験を作らず、Keni の確認を越えないことを前提にしています。'],
+				['2026.06.16', 'AI ゲームの入口をつくる', 'サイトに「ゲーム」欄を追加し、AI ゲームのリンクを一つずつ置けるようにしました。この欄は軽く保ちます。各ゲームはスクリーンショット、URL、短い紹介がそろったら、クリックできるカードとして追加します。'],
+				['2026.06.16', '出発点を確かめ、agent 調整へ書き込む', 'Notion の素材庫に、初期のスクリプトツール、AI 使用枠アップグレードの体験、AI 記録員の当番室という構想が追加されました。サイトには公開に適した二つの観察ノートだけを先に反映し、「AI 記録員当番室」は確認待ちの方向として残しました。同時に、物語の出発点を曖昧な「電脳街」から、家族のPC関連の商いを手伝っていた実際の場面へ修正しました。新しい欄を自動で作らず、経験を作らず、Keni の確認を越えないことを前提にしています。'],
 				['2026.06.15', 'ツール、検索、連絡境界をサイトへ戻す', '今回の更新では、PMP 入口、Codex 使用量モニター、インターフェース画像、ゲーム UI / UITA / UI Blueprint / AI を使ったゲーム UI 開発などの検索語、そして WeChat と海外向けメールの連絡先を整理しました。連絡先が本文として目立ちすぎないように何度も調整し、中国語ページと海外向けページで表示境界を分けました。'],
 				['2026.06.14', '再利用できるコンテンツソース', '現在の物語、観察、実験、デバイス記録、今後の聞き取り課題を Notion に整理しました。各素材には語り手、確認状態、公開範囲、出典を付け、ほかのプロジェクトでも再利用できるようにしながら、記録者の判断や整理した語りを Keni の直接の言葉として扱わないようにしました。'],
 				['2026.06.13', '年表から物語へ', '「彼の物語」は年と結果を並べるだけでなく、それぞれの転機が持つ役割を示し、まだ聞き取れていない具体的な場面を公開して残す形へ変わりました。臨場感は創作で埋めるのではなく、これからの対話で増やしていきます。'],
@@ -187,13 +210,13 @@ export const pageContent = {
 				['2026.06.13', '記録の始まり', 'Keni は AI を記録者兼代理人とし、第三者の視点から自分を紹介することを決めました。'],
 			],
 			nextRecord: {
-				label: '次の記録 / 新しい素材の境界確認',
-				title: '新しい素材から、公開できる範囲を確認する',
-				copy: 'Notion には新しい素材がありますが、公開サイトに採用するのは、事実、プライバシー、表現の境界を守れる部分だけです。次は細部をどこまで展開できるかを確認します。',
+				label: '次の記録 / 最初のゲームリンクを追加する',
+				title: 'スクリーンショットと URL があればカードにできる',
+				copy: 'ゲーム欄は入口リストになりました。次は最初のゲームについて、表示名、スクリーンショット、アクセス先、短い紹介を確認します。',
 				questions: [
-					'福州での最初の仕事の時期は公開できるのか。初期のスクリプトツールはどこまで具体的に話せるのか。',
-					'「x20」は正式なプラン名なのか、それとも Keni の使っている呼び方なのか。',
-					'AI 記録員当番室を出すなら、観察ノート、共同制作ログ、あるいは独立栏目のどこに置くべきか。',
+					'最初のゲームの表示名は何か。',
+					'ゲームのアクセス先 URL は何か。外部リンクか、サイト内リンクか。',
+					'画像はどのスクリーンショットを使い、紹介文は一文か二文にするか。',
 				],
 			},
 		},
@@ -238,6 +261,24 @@ export const pageContent = {
 				['From Keni’s account', 'Language began where he needed to use it', 'Japanese began with high-frequency words for basic communication before a trip to Japan. English grew through programming and technical documentation. Repeated exposure gave him a working vocabulary for development, while everyday expression and grammar remain clear gaps. His next goal is to extend that ability into daily life and business communication.', 'Account organized'],
 				['From Keni’s account', 'About the people who looked after me', 'At several key turns, someone was willing to give an opportunity to a person who was not fully ready. Their names may not belong in public, but their impact deserves to remain.', 'Names kept private'],
 				['Career reflection', 'Education, capability, and late credentials', 'Credentials do not replace work that has already happened, but they can supply the language needed to enter the next door.', 'Career judgment'],
+			],
+		},
+		games: {
+			title: 'Games — With Keni',
+			description: 'A simple game link collection for With Keni. Each AI game can have a screenshot, link, and short introduction.',
+			eyebrow: 'AI game projects',
+			heading: ['Game project', 'links'],
+			lead: 'This page stays simple: one card per game. When a screenshot, URL, and short introduction are ready, the game gets added here.',
+			sectionTitle: 'Game entries',
+			sectionCopy: 'Each game is shown as a small card with an image, a link, and a short description.',
+			placeholder: 'Screenshot pending',
+			projects: [
+				{
+					status: 'COMING SOON',
+					title: 'CodexWeb_Game',
+					text: 'Reserved for the first AI game project. Once Keni provides a screenshot, URL, and short intro, this becomes a clickable game card.',
+					action: 'Waiting for link',
+				},
 			],
 		},
 		lab: {
@@ -290,6 +331,7 @@ export const pageContent = {
 			heading: ['How this website', 'is being built together'],
 			lead: 'AI participates in design, development, and maintenance, but the collaboration is not hidden backstage. Important decisions, failures, and revisions are recorded whenever possible.',
 			items: [
+				['2026.06.16', 'Opening a simple entry list for AI games', 'The site added a Games section for AI game links. The section stays lightweight: each game only needs a screenshot, URL, and short introduction before it becomes a clickable card.'],
 				['2026.06.16', 'Correcting the origin, then writing agent orchestration', 'The Notion material library added records about early script tools, the AI usage-plan upgrade, and a possible AI recorder duty-room column. The site adopted the two notes that are currently safe to publish and kept the duty-room idea as an unconfirmed direction. At the same time, the story’s starting point was corrected from the vague “computer market” label to the real scene of helping with the family computer business: no automatic new section, no invented experience, and no publication beyond Keni’s confirmation.'],
 				['2026.06.15', 'Bringing tools, search, and contact boundaries back into the site', 'This update organized the PMP entry, Codex usage monitors, interface previews, search terms around game UI / UITA / UI blueprint / AI-assisted game UI development, and contact options for WeChat and overseas email. We adjusted the presentation repeatedly so contact details would not read like heavy body copy, and separated what appears on Chinese pages from what appears for overseas visitors.'],
 				['2026.06.14', 'A reusable content source', 'The site’s current stories, observations, experiments, device records, and interview questions were organized in Notion. Each item now identifies its narrative voice, verification status, publication boundary, and source so other projects can reuse it without mistaking recorder judgments or edited accounts for Keni’s direct words.'],
@@ -302,13 +344,13 @@ export const pageContent = {
 				['2026.06.13', 'The record begins', 'Keni decided to let AI act as recorder and representative, introducing him from a third-person perspective.'],
 			],
 			nextRecord: {
-				label: 'Next record / checking the boundaries of new material',
-				title: 'Use the new material to confirm what can be public',
-				copy: 'Notion now holds new material, but the public site should only adopt details that respect facts, privacy, and expression boundaries. The next step is to confirm how far the details can go.',
+				label: 'Next record / add the first game link',
+				title: 'With a screenshot and URL, the card can go in',
+				copy: 'The Games section is now an entry list. Next we only need the first game’s display name, screenshot, URL, and short introduction.',
 				questions: [
-					'Can the time range of the first Fuzhou job be public? How specific can the early script-tool story become?',
-					'Is “x20” an official plan name, or Keni’s shorthand for the higher-usage tier?',
-					'If the AI recorder duty room goes live, should it sit under Notes, Build log, or become its own section?',
+					'What should the first game be called on the site?',
+					'What is the game URL? Should it open externally or stay inside the site?',
+					'Which screenshot should be used, and should the intro be one sentence or two?',
 				],
 			},
 		},

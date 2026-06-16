@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 
-const pages = ['', 'story', 'notes', 'lab', 'devices', 'build-log'];
+const pages = ['', 'story', 'notes', 'games', 'lab', 'devices', 'build-log'];
 const languages = ['', 'ja/', 'en/'];
 
 export const GET: APIRoute = ({ site }) => {

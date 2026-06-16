@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import GameProjectsContent from './GameProjectsContent.astro';
 import { pageContent, type LocalizedLang, type PageId } from '../i18n/content';
 
 interface Props {
@@ -11,6 +12,7 @@ const { lang, page } = Astro.props;
 const content = pageContent[lang][page];
 const isStory = page === 'story';
 const isNotes = page === 'notes';
+const isGames = page === 'games';
 const isLab = page === 'lab';
 const isDevices = page === 'devices';
 const isBuildLog = page === 'build-log';
@@ -57,6 +59,8 @@ const buildLogContent = isBuildLog ? pageContent[lang]['build-log'] : null;
 			))}
 		</div></section>
 	)}
+
+	{isGames && <GameProjectsContent content={content} />}
 
 	{isLab && (
 		<section class="content-section wrap">

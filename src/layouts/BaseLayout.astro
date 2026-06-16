@@ -32,7 +32,7 @@ const copy = {
 		wechat: 'Keni1777',
 		contactHint: '请备注来意',
 		buildLog: '查看建造过程',
-		nav: ['他的故事', '观察笔记', '实验室', '设备间', '共建日志'],
+		nav: ['他的故事', '观察笔记', '游戏项目', '实验室', '设备间', '共建日志'],
 	},
 	ja: {
 		htmlLang: 'ja',
@@ -49,7 +49,7 @@ const copy = {
 		wechat: 'Keni1777',
 		contactHint: '用件を書いてください',
 		buildLog: '制作の記録を見る',
-		nav: ['彼の物語', '観察ノート', 'ラボ', 'デバイス室', '共同制作ログ'],
+		nav: ['彼の物語', '観察ノート', 'ゲーム', 'ラボ', 'デバイス室', '共同制作ログ'],
 	},
 	en: {
 		htmlLang: 'en',
@@ -66,7 +66,7 @@ const copy = {
 		wechat: 'Keni1777',
 		contactHint: 'include context',
 		buildLog: 'View the build process',
-		nav: ['His story', 'Notes', 'Lab', 'Devices', 'Build log'],
+		nav: ['His story', 'Notes', 'Games', 'Lab', 'Devices', 'Build log'],
 	},
 } as const;
 
@@ -76,7 +76,7 @@ const route = pagePath ? `/${pagePath}` : '';
 const localeRoot = lang === 'zh' ? '' : `/${lang}`;
 const localizedPath = (targetLang: 'zh' | 'ja' | 'en') =>
 	targetLang === 'zh' ? route || '/' : `/${targetLang}${route}`;
-const navItems = ['story', 'notes', 'lab', 'devices', 'build-log'].map((id, index) => ({
+const navItems = ['story', 'notes', 'games', 'lab', 'devices', 'build-log'].map((id, index) => ({
 	href: `${localeRoot}/${id}`,
 	label: current.nav[index],
 	id,
@@ -108,6 +108,11 @@ const structuredData = {
 				'AI game UI development',
 				'AI-assisted game UI',
 				'AI 游戏 UI 开发',
+				'AI game development',
+				'AI 游戏开发',
+				'AI 游戏项目',
+				'CodexWeb_Game',
+				'Game prototype',
 				'AI workflow',
 				'Codex usage monitor',
 				'PMP practice exam',

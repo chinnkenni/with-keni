@@ -4,7 +4,7 @@ import type { LocalizedLang, PageId } from '../../i18n/content';
 
 export function getStaticPaths() {
 	const languages = ['ja', 'en'];
-	const pages = ['story', 'notes', 'lab', 'devices', 'build-log'];
+	const pages = ['story', 'notes', 'games', 'lab', 'devices', 'build-log'];
 
 	return languages.flatMap((lang) =>
 		pages.map((page) => ({ params: { lang, page } })),

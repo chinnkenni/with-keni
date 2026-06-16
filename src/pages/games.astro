@@ -1,0 +1,32 @@
+---
+import GameProjectsContent from '../components/GameProjectsContent.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const gamesContent = {
+	sectionTitle: '游戏入口',
+	sectionCopy: '这里会按项目放游戏链接。以后每个游戏只需要一张截图、一个地址和一段简单介绍。',
+	placeholder: '等待截图',
+	projects: [
+		{
+			status: 'COMING SOON',
+			title: 'CodexWeb_Game',
+			text: 'AI 游戏项目入口预留位。等你给我游戏截图、访问地址和一句简介后，这里会变成可点击的游戏卡片。',
+			action: '等待链接',
+		},
+	],
+};
+---
+
+<BaseLayout
+	title="游戏项目 — With Keni"
+	description="With Keni 的游戏项目入口，用来按项目展示 AI 游戏链接、截图和简介。"
+	active="games"
+	pagePath="games"
+>
+	<section class="page-intro wrap">
+		<p class="eyebrow">AI game projects</p>
+		<h1>游戏项目<br />入口合集</h1>
+		<p class="lead">这里不写复杂开发长文，只放一个个游戏入口。等你给我截图、地址和简介，我就把对应游戏卡片补进来。</p>
+	</section>
+	<GameProjectsContent content={gamesContent} />
+</BaseLayout>
