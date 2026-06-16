@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const entries = [
+	['2026.06.16', '校准起点，再写进 agent 调度', 'Notion 素材库新增了早期脚本工具、AI 用量升级体验和 AI 记录员值班室设想。站点先采用已经适合公开的两条观察笔记，并把“AI 记录员值班室”保留为待确认方向。同时把故事起点从笼统的“电脑城”校准为和家人做电脑生意的真实场景：不自动开新栏目、不制造经历、不绕过 Keni 的确认。'],
 	['2026.06.15', '把工具、搜索与联系边界写进站点', '这次更新把 PMP 入口、Codex 额度监控工具、界面截图、游戏 UI / UITA / UI 蓝图 / AI 游戏 UI 开发等搜索关键词，以及微信和海外邮件的联系方式一起整理进站点。我们反复调整展示方式，避免把联系方式写成突兀正文，也把中文与海外访客的展示边界区分开。'],
 	['2026.06.14', '建立可复用的内容源', '站点现有的故事、观察、实验、设备记录与待采访问题被整理进 Notion。每条素材都标记叙事声音、核实状态、公开边界和来源，供其他项目复用，同时避免把记录员判断或口述整理误当成 Keni 的直接引语。'],
 	['2026.06.13', '从履历走向故事', '“他的故事”不再只列出年份和结果，而是标出每次转折的角色，并公开保留尚未采集到的具体场景。我们决定用继续访谈来增加代入感，而不是用虚构细节填满空白。'],
@@ -12,24 +13,24 @@ const entries = [
 	['2026.06.13', '记录开始', 'Keni 决定让 AI 作为记录员与代理人，从第三人称角度介绍他。'],
 ];
 const questions = [
-	'第一次去日本时，有没有一个因为语言而印象很深的具体场景？',
-	'哪些技术文档或开发经历，让你第一次发现自己已经能直接理解不少英文？',
-	'你最希望先应对哪一种日常或商业交流场景？',
+	'福州第一份工作的时间范围是否可以公开？早期脚本工具适合讲到多具体？',
+	'“x20”是正式套餐名，还是 Keni 对更高额度档位的口头称呼？',
+	'AI 记录员值班室如果上线，应该放在观察笔记、共建日志，还是成为独立栏目？',
 ];
 ---
 <BaseLayout title="共建日志 — With Keni" description="公开记录 With Keni 由 ChinKeni 与 AI 共同设计、开发、修正和扩展的过程，包括重要决策、失败与内容边界。" active="build-log" pagePath="build-log">
 	<section class="page-intro wrap"><p class="eyebrow">Built in public</p><h1>这个网站怎样<br />被一起建造</h1><p class="lead">AI 参与设计、开发和维护，但不把协作藏在幕后。重要决定、失败和修改都会尽可能留下记录。</p></section>
 	<section class="log wrap">
 		{entries.map(([date, title, text], index) => (
-			<article><time>{date}</time><div><span>LOG / 00{entries.length - index}</span><h2>{title}</h2><p>{text}</p></div></article>
+			<article><time>{date}</time><div><span>LOG / {String(entries.length - index).padStart(2, '0')}</span><h2>{title}</h2><p>{text}</p></div></article>
 		))}
 	</section>
 	<section class="next-record wrap">
 		<p class="eyebrow">下一次记录 / 继续听 Keni 讲</p>
 		<div class="next-record-grid">
 			<div>
-				<h2>从想学的语言里，<br />继续认识他</h2>
-				<p>第一段语言学习经历已经收进观察笔记。接下来继续追问具体场景，让记录不只停留在概括里。</p>
+				<h2>从新素材里，<br />继续确认边界</h2>
+				<p>Notion 已经记录了新的素材，但公开站点只采用能守住隐私、事实和表达边界的部分。下一步先确认哪些细节可以展开。</p>
 			</div>
 			<ol>
 				{questions.map((question) => <li>{question}</li>)}
