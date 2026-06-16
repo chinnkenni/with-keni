@@ -4,14 +4,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const gamesContent = {
 	sectionTitle: '游戏入口',
-	sectionCopy: '这里会按项目放游戏链接。以后每个游戏只需要一张截图、一个地址和一段简单介绍。',
+	sectionCopy: '一个游戏一张卡片。保留截图、访问地址和简短介绍，方便直接打开体验。',
 	placeholder: '等待截图',
 	projects: [
 		{
-			status: 'COMING SOON',
-			title: 'CodexWeb_Game',
-			text: 'AI 游戏项目入口预留位。等你给我游戏截图、访问地址和一句简介后，这里会变成可点击的游戏卡片。',
-			action: '等待链接',
+			status: 'AI GAME 01',
+			title: '旧城回身',
+			text: '短局叙事游戏。三小时后，雾港会被旧城吞回过去；你要弄明白，自己是被塔档叫回来的调查员，还是旧城等了很多年的王。',
+			href: 'https://game001.withkeni.com/',
+			action: '开始游戏',
+			image: '/images/games/old-city-return.jpg',
+			alt: '《旧城回身》游戏封面，雾港旧城街区与标题文字',
 		},
 	],
 };
@@ -19,14 +22,14 @@ const gamesContent = {
 
 <BaseLayout
 	title="游戏项目 — With Keni"
-	description="With Keni 的游戏项目入口，用来按项目展示 AI 游戏链接、截图和简介。"
+	description="With Keni 的 AI 游戏项目入口，收录《旧城回身》等游戏链接、截图和简介。"
 	active="games"
 	pagePath="games"
 >
 	<section class="page-intro wrap">
 		<p class="eyebrow">AI game projects</p>
 		<h1>游戏项目<br />入口合集</h1>
-		<p class="lead">这里不写复杂开发长文，只放一个个游戏入口。等你给我截图、地址和简介，我就把对应游戏卡片补进来。</p>
+		<p class="lead">这里不写复杂开发长文，只放一个个游戏入口。截图、地址和简介准备好后，就把对应游戏补成可点击卡片。</p>
 	</section>
 	<GameProjectsContent content={gamesContent} />
 </BaseLayout>

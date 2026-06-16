@@ -67,10 +67,10 @@ const { content } = Astro.props;
 
 <style>
 	.game-section { padding: 72px 0; }
-	.game-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+	.game-list { display: grid; grid-template-columns: 1fr; gap: 24px; }
 	.game-card {
 		display: grid;
-		grid-template-rows: auto 1fr;
+		grid-template-columns: minmax(240px, .72fr) 1fr;
 		min-height: 420px;
 		border: 1px solid var(--line);
 		background: rgba(255, 253, 247, .34);
@@ -82,7 +82,7 @@ const { content } = Astro.props;
 		min-height: 220px;
 		margin: 0;
 		place-items: center;
-		border-bottom: 1px solid var(--line);
+		border-right: 1px solid var(--line);
 		background:
 			linear-gradient(rgba(23, 23, 19, .035) 1px, transparent 1px),
 			linear-gradient(90deg, rgba(23, 23, 19, .025) 1px, transparent 1px),
@@ -90,7 +90,8 @@ const { content } = Astro.props;
 		background-size: 24px 24px;
 		overflow: hidden;
 	}
-	.game-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+	.game-thumb:not(.empty) { background: #11110f; }
+	.game-thumb img { display: block; width: 100%; height: 100%; object-fit: contain; }
 	.game-thumb span {
 		color: rgba(88, 87, 79, .58);
 		font-size: 12px;
@@ -99,19 +100,22 @@ const { content } = Astro.props;
 	}
 	.game-card-copy { display: flex; flex-direction: column; padding: 28px; }
 	.game-card h3 {
-		margin: 54px 0 12px;
+		margin: 42px 0 14px;
 		font-family: var(--serif);
-		font-size: clamp(26px, 3.2vw, 38px);
+		font-size: clamp(30px, 4vw, 54px);
 		font-weight: 600;
 		line-height: 1.25;
 	}
-	.game-card p { margin: 0; color: var(--ink-soft); font-size: 13px; }
+	.game-card p { max-width: 560px; margin: 0; color: var(--ink-soft); font-size: 14px; }
 	.game-card .text-link { margin-top: auto; padding-top: 28px; }
 	a.game-card .text-link::after { content: '↗'; }
 	article.game-card .text-link::after { content: '→'; }
 	@media (max-width: 760px) {
-		.game-list { grid-template-columns: 1fr; }
-		.game-card { min-height: 360px; }
-		.game-thumb { min-height: 190px; }
+		.game-card { grid-template-columns: 1fr; min-height: 0; }
+		.game-thumb { min-height: 420px; border-right: 0; border-bottom: 1px solid var(--line); }
+		.game-card h3 { margin-top: 28px; }
+	}
+	@media (max-width: 480px) {
+		.game-thumb { min-height: 360px; }
 	}
 </style>
