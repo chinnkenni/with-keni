@@ -147,6 +147,7 @@ export const pageContent = {
 					action: 'ゲームを開く',
 					image: '/images/games/old-city-return.jpg',
 					alt: '『旧城回身』のゲームカバー。霧港の旧市街とタイトル文字。',
+					imagePosition: '50% 58%',
 				},
 				{
 					status: 'AI GAME 02',
@@ -156,6 +157,7 @@ export const pageContent = {
 					action: '夢へ入る',
 					image: '/images/games/dream-memory.jpg',
 					alt: '『梦境记忆』のゲームカバー。旧校門、月、舞うカード、夢の入口画面。',
+					imagePosition: '50% 34%',
 				},
 			],
 		},
@@ -209,6 +211,7 @@ export const pageContent = {
 			heading: ['このサイトが', '一緒につくられるまで'],
 			lead: 'AI は設計、開発、運営に参加しますが、その協働を舞台裏に隠しません。重要な判断、失敗、変更をできるだけ記録します。',
 			items: [
+				['2026.06.22', 'ゲーム入口を小さなカードの尺度へ戻す', '二つ目のゲームを追加したあと、以前の横長カードではカバー画像が大きく表示されすぎ、スクリーンショット内の文字や画面がぼやけて見えました。ゲーム欄を一行に複数並ぶ統一カードへ変更し、カバーを固定比率でトリミングしながら、それぞれの画像に合う表示位置を設定しました。'],
 				['2026.06.22', '『梦境记忆』を二つ目のゲーム入口にする', 'Keni が game002.withkeni.com の URL と「夢の入口」のスクリーンショットを提供しました。ゲーム欄は引き続き、スクリーンショット、URL、短い紹介だけの軽い形式を保ち、『梦境记忆』を二つ目のクリックできる入口として追加しました。'],
 				['2026.06.17', '『旧城回身』を最初のゲーム入口にする', 'Keni が game001.withkeni.com の URL と縦長のカバー画像を提供しました。ゲーム欄はプレースホルダーから最初のクリックできるカードへ進みました。約束どおり、スクリーンショット、URL、短い紹介だけの軽い形式にしています。'],
 				['2026.06.16', 'AI ゲームの入口をつくる', 'サイトに「ゲーム」欄を追加し、AI ゲームのリンクを一つずつ置けるようにしました。この欄は軽く保ちます。各ゲームはスクリーンショット、URL、短い紹介がそろったら、クリックできるカードとして追加します。'],
@@ -295,6 +298,7 @@ export const pageContent = {
 					action: 'Start game',
 					image: '/images/games/old-city-return.jpg',
 					alt: 'Game cover for 旧城回身, showing the old streets of Fog Harbor and the title.',
+					imagePosition: '50% 58%',
 				},
 				{
 					status: 'AI GAME 02',
@@ -304,6 +308,7 @@ export const pageContent = {
 					action: 'Enter dream',
 					image: '/images/games/dream-memory.jpg',
 					alt: 'Game cover for 梦境记忆, showing an old school gate, the moon, floating cards, and a dream entry screen.',
+					imagePosition: '50% 34%',
 				},
 			],
 		},
@@ -357,6 +362,7 @@ export const pageContent = {
 			heading: ['How this website', 'is being built together'],
 			lead: 'AI participates in design, development, and maintenance, but the collaboration is not hidden backstage. Important decisions, failures, and revisions are recorded whenever possible.',
 			items: [
+				['2026.06.22', 'Returning game entries to a smaller card scale', 'After the second game was added, the previous large horizontal cards made the cover screenshots feel too enlarged and soft. The Games section now uses multiple uniform cards per row, crops covers to a fixed ratio, and sets image-specific focal positions so it reads more like a game list than a poster wall.'],
 				['2026.06.22', 'Adding 梦境记忆 as the second game entry', 'Keni provided the game002.withkeni.com URL and a Dream Entry screenshot. The Games section keeps the same lightweight pattern: one screenshot, one link, and one short introduction, with 梦境记忆 added as the second clickable entry.'],
 				['2026.06.17', 'Connecting 旧城回身 as the first game entry', 'Keni provided the game001.withkeni.com URL and a vertical cover image. The Games section moved from a placeholder into its first clickable card, while keeping the agreed lightweight format: screenshot, URL, and short introduction instead of a heavier feature page.'],
 				['2026.06.16', 'Opening a simple entry list for AI games', 'The site added a Games section for AI game links. The section stays lightweight: each game only needs a screenshot, URL, and short introduction before it becomes a clickable card.'],
