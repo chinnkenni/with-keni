@@ -22,7 +22,7 @@ export const homeContent = {
 		paths: [
 			{ number: '01', title: '家族のPC関連の商いから始まった', text: 'キャリアの出発点は学校でも有名企業でもありませんでした。家族と一緒に商いを手伝う中で、まず一台の PC を直すことを覚え、やがてソフトウェア、画像、システムを理解し始めました。', href: '/ja/story' },
 			{ number: '02', title: '複雑さを仕組みに変える', text: '個人の実務担当からゲーム UI リーダーへ。UITA、UI Blueprint、モジュール化した UI 制作を、チームで再利用できる方法へ整理してきました。', href: '/ja/notes' },
-			{ number: '03', title: 'AI ゲームの入口', text: '最初の入口は『旧城回身』です。今後のゲームも、スクリーンショット、リンク、短い紹介をそえた一枚のカードとして置いていきます。', href: '/ja/games' },
+			{ number: '03', title: 'AI ゲームの入口', text: '『旧城回身』と『梦境记忆』を公開入口として置きました。今後のゲームも、スクリーンショット、リンク、短い紹介をそえた一枚のカードとして追加します。', href: '/ja/games' },
 			{ number: '04', title: '人と AI の共同実験', text: 'このサイト自体も実験の一つです。要望、議論、失敗、更新のすべてを公開記録の一部にします。', href: '/ja/build-log' },
 		],
 		enter: '記録を開く',
@@ -63,7 +63,7 @@ export const homeContent = {
 		paths: [
 			{ number: '01', title: 'Starting in the family computer business', text: 'His career did not begin at school or a famous company. Helping with the family business, he first learned to repair computers, then began to understand software, images, and systems.', href: '/en/story' },
 			{ number: '02', title: 'Turning complexity into systems', text: 'As he moved from individual contributor to game UI lead, he began turning UITA, UI blueprint work, and modular UI production into reusable team methods.', href: '/en/notes' },
-			{ number: '03', title: 'AI game entries', text: 'The first entry is 旧城回身. Future games will also appear as one card each, with a screenshot, link, and short introduction.', href: '/en/games' },
+			{ number: '03', title: 'AI game entries', text: '旧城回身 and 梦境记忆 are now live entries. Future games will also appear as one card each, with a screenshot, link, and short introduction.', href: '/en/games' },
 			{ number: '04', title: 'A human and AI collaboration', text: 'This website is one of the experiments. Requests, debates, failures, and every update become part of the public record.', href: '/en/build-log' },
 		],
 		enter: 'Open archive',
@@ -131,7 +131,7 @@ export const pageContent = {
 		},
 		games: {
 			title: 'ゲームプロジェクト — With Keni',
-			description: 'With Keni のゲームリンク集です。AI ゲーム『旧城回身』などを、スクリーンショット、リンク、短い紹介とともに並べます。',
+			description: 'With Keni のゲームリンク集です。AI ゲーム『旧城回身』『梦境记忆』などを、スクリーンショット、リンク、短い紹介とともに並べます。',
 			eyebrow: 'AI game projects',
 			heading: ['ゲームプロジェクトの', 'リンク集'],
 			lead: 'ここには複雑な開発記事ではなく、ゲームごとの入口を置きます。スクリーンショット、URL、短い紹介がそろったらカードを追加します。',
@@ -147,6 +147,15 @@ export const pageContent = {
 					action: 'ゲームを開く',
 					image: '/images/games/old-city-return.jpg',
 					alt: '『旧城回身』のゲームカバー。霧港の旧市街とタイトル文字。',
+				},
+				{
+					status: 'AI GAME 02',
+					title: '梦境记忆',
+					text: '月相パズルを中心にした短編の夢探索ゲーム。目覚める前に、旧校門の鈴、散らばった名前、チケットの半券、磁気テープ、練習帳をたどり、記憶の奥から朝へ戻ります。',
+					href: 'https://game002.withkeni.com/',
+					action: '夢へ入る',
+					image: '/images/games/dream-memory.jpg',
+					alt: '『梦境记忆』のゲームカバー。旧校門、月、舞うカード、夢の入口画面。',
 				},
 			],
 		},
@@ -200,6 +209,7 @@ export const pageContent = {
 			heading: ['このサイトが', '一緒につくられるまで'],
 			lead: 'AI は設計、開発、運営に参加しますが、その協働を舞台裏に隠しません。重要な判断、失敗、変更をできるだけ記録します。',
 			items: [
+				['2026.06.22', '『梦境记忆』を二つ目のゲーム入口にする', 'Keni が game002.withkeni.com の URL と「夢の入口」のスクリーンショットを提供しました。ゲーム欄は引き続き、スクリーンショット、URL、短い紹介だけの軽い形式を保ち、『梦境记忆』を二つ目のクリックできる入口として追加しました。'],
 				['2026.06.17', '『旧城回身』を最初のゲーム入口にする', 'Keni が game001.withkeni.com の URL と縦長のカバー画像を提供しました。ゲーム欄はプレースホルダーから最初のクリックできるカードへ進みました。約束どおり、スクリーンショット、URL、短い紹介だけの軽い形式にしています。'],
 				['2026.06.16', 'AI ゲームの入口をつくる', 'サイトに「ゲーム」欄を追加し、AI ゲームのリンクを一つずつ置けるようにしました。この欄は軽く保ちます。各ゲームはスクリーンショット、URL、短い紹介がそろったら、クリックできるカードとして追加します。'],
 				['2026.06.16', '出発点を確かめ、agent 調整へ書き込む', 'Notion の素材庫に、初期のスクリプトツール、AI 使用枠アップグレードの体験、AI 記録員の当番室という構想が追加されました。サイトには公開に適した二つの観察ノートだけを先に反映し、「AI 記録員当番室」は確認待ちの方向として残しました。同時に、物語の出発点を曖昧な「電脳街」から、家族のPC関連の商いを手伝っていた実際の場面へ修正しました。新しい欄を自動で作らず、経験を作らず、Keni の確認を越えないことを前提にしています。'],
@@ -216,7 +226,7 @@ export const pageContent = {
 			nextRecord: {
 				label: '次の記録 / ゲーム入口を続けて追加する',
 				title: '一つ完成したら、一枚の入口カードにする',
-				copy: '『旧城回身』は接続済みです。次のゲームも、表示名、スクリーンショット、アクセス先、短い紹介がそろえば追加できます。',
+				copy: '『旧城回身』と『梦境记忆』は接続済みです。次のゲームも、表示名、スクリーンショット、アクセス先、短い紹介がそろえば追加できます。',
 				questions: [
 					'次のゲームの表示名は何か。',
 					'ゲームの URL とスクリーンショットは決まっているか。',
@@ -269,7 +279,7 @@ export const pageContent = {
 		},
 		games: {
 			title: 'Games — With Keni',
-			description: 'A simple game link collection for With Keni, including the AI game 旧城回身 with its screenshot, link, and short introduction.',
+			description: 'A simple game link collection for With Keni, including the AI games 旧城回身 and 梦境记忆 with screenshots, links, and short introductions.',
 			eyebrow: 'AI game projects',
 			heading: ['Game project', 'links'],
 			lead: 'This page stays simple: one card per game. When a screenshot, URL, and short introduction are ready, the game gets added here.',
@@ -285,6 +295,15 @@ export const pageContent = {
 					action: 'Start game',
 					image: '/images/games/old-city-return.jpg',
 					alt: 'Game cover for 旧城回身, showing the old streets of Fog Harbor and the title.',
+				},
+				{
+					status: 'AI GAME 02',
+					title: '梦境记忆',
+					text: 'A short dream-exploration puzzle built around moon phases. Before waking, follow the old school gate bell, scattered names, ticket stubs, tapes, and exercise books into deeper memories and bring yourself back to morning.',
+					href: 'https://game002.withkeni.com/',
+					action: 'Enter dream',
+					image: '/images/games/dream-memory.jpg',
+					alt: 'Game cover for 梦境记忆, showing an old school gate, the moon, floating cards, and a dream entry screen.',
 				},
 			],
 		},
@@ -338,6 +357,7 @@ export const pageContent = {
 			heading: ['How this website', 'is being built together'],
 			lead: 'AI participates in design, development, and maintenance, but the collaboration is not hidden backstage. Important decisions, failures, and revisions are recorded whenever possible.',
 			items: [
+				['2026.06.22', 'Adding 梦境记忆 as the second game entry', 'Keni provided the game002.withkeni.com URL and a Dream Entry screenshot. The Games section keeps the same lightweight pattern: one screenshot, one link, and one short introduction, with 梦境记忆 added as the second clickable entry.'],
 				['2026.06.17', 'Connecting 旧城回身 as the first game entry', 'Keni provided the game001.withkeni.com URL and a vertical cover image. The Games section moved from a placeholder into its first clickable card, while keeping the agreed lightweight format: screenshot, URL, and short introduction instead of a heavier feature page.'],
 				['2026.06.16', 'Opening a simple entry list for AI games', 'The site added a Games section for AI game links. The section stays lightweight: each game only needs a screenshot, URL, and short introduction before it becomes a clickable card.'],
 				['2026.06.16', 'Correcting the origin, then writing agent orchestration', 'The Notion material library added records about early script tools, the AI usage-plan upgrade, and a possible AI recorder duty-room column. The site adopted the two notes that are currently safe to publish and kept the duty-room idea as an unconfirmed direction. At the same time, the story’s starting point was corrected from the vague “computer market” label to the real scene of helping with the family computer business: no automatic new section, no invented experience, and no publication beyond Keni’s confirmation.'],
@@ -354,7 +374,7 @@ export const pageContent = {
 			nextRecord: {
 				label: 'Next record / keep adding game entries',
 				title: 'Each finished game becomes one entry card',
-				copy: '旧城回身 is now connected. The next game only needs a display name, screenshot, URL, and short introduction before it can be added.',
+				copy: '旧城回身 and 梦境记忆 are now connected. The next game only needs a display name, screenshot, URL, and short introduction before it can be added.',
 				questions: [
 					'What should the next game be called on the site?',
 					'Are the game URL and screenshot ready?',
